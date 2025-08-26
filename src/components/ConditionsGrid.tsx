@@ -1,9 +1,10 @@
+
 "use client";
 
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Clock, Users, TrendingUp } from "lucide-react";
+import { ArrowRight, Clock, Users, TrendingUp, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const ConditionsGrid = () => {
@@ -12,6 +13,7 @@ const ConditionsGrid = () => {
       title: "Back Pain Relief",
       description: "Comprehensive exercises and stretches to alleviate lower and upper back pain",
       icon: "🔙",
+      image: "💪",
       link: "/conditions/back-pain",
       patients: "15,000+",
       duration: "4-6 weeks",
@@ -23,6 +25,7 @@ const ConditionsGrid = () => {
       title: "Neck Pain Solutions",
       description: "Targeted therapy for cervical spine issues and tension headaches",
       icon: "🔗",
+      image: "🧘‍♀️",
       link: "/conditions/neck-pain", 
       patients: "12,000+",
       duration: "3-4 weeks",
@@ -34,6 +37,7 @@ const ConditionsGrid = () => {
       title: "Shoulder Mobility",
       description: "Restore range of motion and strength in frozen or injured shoulders",
       icon: "💪",
+      image: "🏋️‍♀️",
       link: "/conditions/shoulder-pain",
       patients: "8,500+", 
       duration: "6-8 weeks",
@@ -45,6 +49,7 @@ const ConditionsGrid = () => {
       title: "Knee Pain Management",
       description: "Evidence-based protocols for osteoarthritis and injury recovery",
       icon: "🦵",
+      image: "🚶‍♂️",
       link: "/conditions/knee-pain",
       patients: "10,000+",
       duration: "5-7 weeks", 
@@ -56,6 +61,7 @@ const ConditionsGrid = () => {
       title: "Sports Injuries",
       description: "Specialized rehabilitation for athletes and active individuals",
       icon: "🏃‍♂️",
+      image: "⚡",
       link: "/conditions/sports-injuries",
       patients: "6,000+",
       duration: "8-12 weeks",
@@ -67,6 +73,7 @@ const ConditionsGrid = () => {
       title: "Post-Surgery Recovery",
       description: "Guided rehabilitation following orthopedic procedures",
       icon: "🏥",
+      image: "🩺",
       link: "/conditions/post-surgery",
       patients: "4,500+",
       duration: "12-16 weeks",
@@ -92,7 +99,7 @@ const ConditionsGrid = () => {
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }
+      transition: { duration: 0.6 }
     }
   };
 
@@ -101,28 +108,33 @@ const ConditionsGrid = () => {
     visible: {
       scale: 1,
       opacity: 1,
-      transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }
+      transition: { duration: 0.5 }
     },
     hover: {
       scale: 1.02,
       y: -8,
-      transition: { duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }
+      transition: { duration: 0.3 }
     }
   };
 
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
-      case "Beginner": return "bg-green-100 text-green-800 border-green-200";
-      case "Intermediate": return "bg-yellow-100 text-yellow-800 border-yellow-200";
-      case "Advanced": return "bg-red-100 text-red-800 border-red-200";
-      case "Variable": return "bg-purple-100 text-purple-800 border-purple-200";
-      default: return "bg-gray-100 text-gray-800 border-gray-200";
+      case "Beginner": return "bg-green-100 text-green-700 border-green-200";
+      case "Intermediate": return "bg-yellow-100 text-yellow-700 border-yellow-200";
+      case "Advanced": return "bg-red-100 text-red-700 border-red-200";
+      case "Variable": return "bg-purple-100 text-purple-700 border-purple-200";
+      default: return "bg-gray-100 text-gray-700 border-gray-200";
     }
   };
 
   return (
-    <section className="py-20 bg-gradient-subtle">
-      <div className="container">
+    <section className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-green-50 relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%2393c5fd" fill-opacity="0.1"%3E%3Cpath d="M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z"/%3E%3C/g%3E%3C/svg%3E')]"></div>
+      </div>
+
+      <div className="container relative">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -130,18 +142,29 @@ const ConditionsGrid = () => {
           viewport={{ once: true, amount: 0.3 }}
           className="text-center mb-16"
         >
+          <motion.div 
+            variants={itemVariants}
+            className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 mb-6 border border-blue-200 shadow-soft"
+          >
+            <Zap className="w-4 h-4 text-blue-600" />
+            <span className="text-slate-700 font-medium">Specialized Treatment Programs</span>
+          </motion.div>
+          
           <motion.h2 
             variants={itemVariants}
-            className="text-3xl lg:text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+            className="text-3xl lg:text-5xl font-bold mb-6 text-slate-800"
           >
-            Specialized Treatment Programs
+            Expert Solutions for{" "}
+            <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
+              Your Recovery
+            </span>
           </motion.h2>
           <motion.p 
             variants={itemVariants}
-            className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
+            className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed"
           >
             Evidence-based physiotherapy protocols tailored to your specific condition. 
-            Our comprehensive programs combine the latest research with proven techniques.
+            Our comprehensive programs combine the latest research with proven techniques for optimal recovery.
           </motion.p>
         </motion.div>
 
@@ -160,13 +183,13 @@ const ConditionsGrid = () => {
               whileTap={{ scale: 0.98 }}
               className="group"
             >
-              <Card className="card-hover h-full shadow-healthcare border-0 overflow-hidden">
-                <div className={`h-2 bg-gradient-to-r ${condition.color}`} />
-                
-                <CardHeader className="pb-4">
-                  <div className="flex items-start justify-between mb-4">
+              <Card className="bg-white/80 backdrop-blur-sm border border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-300 h-full overflow-hidden">
+                {/* Header Image Section */}
+                <div className={`h-32 bg-gradient-to-r ${condition.color} relative overflow-hidden`}>
+                  <div className="absolute inset-0 bg-black/10"></div>
+                  <div className="absolute inset-0 flex items-center justify-center">
                     <motion.div 
-                      className="text-4xl"
+                      className="text-6xl"
                       animate={{ 
                         rotate: [0, 5, -5, 0],
                         scale: [1, 1.1, 1]
@@ -174,58 +197,65 @@ const ConditionsGrid = () => {
                       transition={{ 
                         duration: 3, 
                         repeat: Infinity, 
-                        delay: index * 0.2,
-                        ease: "easeInOut"
+                        delay: index * 0.2
                       }}
                     >
-                      {condition.icon}
+                      {condition.image}
                     </motion.div>
-                    <span className={`px-3 py-1 rounded-full text-xs font-medium border ${getDifficultyColor(condition.difficulty)}`}>
+                  </div>
+                  <div className="absolute top-4 right-4">
+                    <span className={`px-3 py-1 rounded-full text-xs font-semibold border ${getDifficultyColor(condition.difficulty)} bg-white/90`}>
                       {condition.difficulty}
                     </span>
                   </div>
-                  <CardTitle className="text-xl group-hover:text-primary transition-colors">
-                    {condition.title}
-                  </CardTitle>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                </div>
+                
+                <CardHeader className="pb-4">
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="text-2xl">{condition.icon}</div>
+                    <CardTitle className="text-xl group-hover:text-blue-600 transition-colors leading-tight">
+                      {condition.title}
+                    </CardTitle>
+                  </div>
+                  <p className="text-slate-600 text-sm leading-relaxed">
                     {condition.description}
                   </p>
                 </CardHeader>
 
                 <CardContent className="pt-0">
-                  {/* Stats */}
-                  <div className="grid grid-cols-2 gap-4 mb-6 p-4 bg-muted/30 rounded-lg">
+                  {/* Stats Grid */}
+                  <div className="grid grid-cols-2 gap-4 mb-6 p-4 bg-slate-50/80 rounded-xl border border-slate-200">
                     <div className="text-center">
                       <div className="flex items-center justify-center gap-1 mb-1">
-                        <TrendingUp className="w-4 h-4 text-success" />
-                        <span className="font-semibold text-success">{condition.stats.success}</span>
+                        <TrendingUp className="w-4 h-4 text-green-600" />
+                        <span className="font-bold text-green-600 text-lg">{condition.stats.success}</span>
                       </div>
-                      <p className="text-xs text-muted-foreground">Success Rate</p>
+                      <p className="text-xs text-slate-600 font-medium">Success Rate</p>
                     </div>
                     <div className="text-center">
                       <div className="flex items-center justify-center gap-1 mb-1">
-                        <Clock className="w-4 h-4 text-primary" />
-                        <span className="font-semibold text-primary">{condition.stats.time}</span>
+                        <Clock className="w-4 h-4 text-blue-600" />
+                        <span className="font-bold text-blue-600 text-lg">{condition.stats.time}</span>
                       </div>
-                      <p className="text-xs text-muted-foreground">Daily Time</p>
+                      <p className="text-xs text-slate-600 font-medium">Daily Time</p>
                     </div>
                   </div>
 
                   {/* Key Info */}
                   <div className="space-y-3 mb-6">
-                    <div className="flex items-center gap-2 text-sm">
-                      <Users className="w-4 h-4 text-muted-foreground" />
-                      <span>{condition.patients} patients helped</span>
+                    <div className="flex items-center gap-2 text-sm text-slate-600">
+                      <Users className="w-4 h-4 text-slate-500" />
+                      <span className="font-medium">{condition.patients} patients helped</span>
                     </div>
-                    <div className="flex items-center gap-2 text-sm">
-                      <Clock className="w-4 h-4 text-muted-foreground" />
-                      <span>Typical duration: {condition.duration}</span>
+                    <div className="flex items-center gap-2 text-sm text-slate-600">
+                      <Clock className="w-4 h-4 text-slate-500" />
+                      <span className="font-medium">Typical duration: {condition.duration}</span>
                     </div>
                   </div>
 
                   {/* CTA Button */}
                   <Link to={condition.link}>
-                    <Button className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                    <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 group-hover:scale-105">
                       Start Treatment Plan
                       <motion.div
                         className="ml-2"
@@ -250,8 +280,8 @@ const ConditionsGrid = () => {
           transition={{ delay: 0.5, duration: 0.6 }}
           className="text-center mt-12"
         >
-          <Button size="lg" variant="outline" className="border-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300">
-            View All Conditions
+          <Button size="lg" variant="outline" className="border-2 border-slate-300 text-slate-700 hover:bg-white hover:text-blue-600 hover:border-blue-300 transition-all duration-300 px-8 py-4 rounded-full bg-white/80 backdrop-blur-sm shadow-lg">
+            Explore All Conditions
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
         </motion.div>
