@@ -2,6 +2,7 @@
 import ModernHeroSection from "@/components/ModernHeroSection";
 import ConditionsGrid from "@/components/ConditionsGrid";
 import NewsletterSection from "@/components/NewsletterSection";
+import assessmentImage from "@/assets/assessment-tool.jpg";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -214,32 +215,40 @@ const HomePage = () => {
                   </div>
                   
                   {/* Image Section */}
-                  <div className="bg-gradient-to-br from-green-100 to-blue-100 p-8 lg:p-12 flex items-center justify-center">
+                  <div className="relative overflow-hidden">
+                    <img 
+                      src={assessmentImage} 
+                      alt="Interactive health assessment" 
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20"></div>
                     <motion.div 
-                      className="text-center"
+                      className="absolute inset-0 flex items-center justify-center text-center"
                       animate={{ y: [0, -10, 0] }}
                       transition={{ duration: 4, repeat: Infinity }}
                     >
-                      <div className="text-8xl mb-6">🎯</div>
-                      <h4 className="font-bold text-slate-800 text-xl mb-4">Perfect for:</h4>
-                      <ul className="text-slate-700 space-y-2 text-left max-w-xs">
-                        <li className="flex items-center gap-2">
-                          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                          Office workers with upper back tension
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                          People experiencing shoulder stiffness
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                          Anyone looking to improve posture
-                        </li>
-                        <li className="flex items-center gap-2">
-                          <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-                          Athletes needing spine mobility
-                        </li>
-                      </ul>
+                      <div className="glass rounded-2xl p-6">
+                        <div className="text-4xl mb-4 text-white">🎯</div>
+                        <h4 className="font-bold text-white text-xl mb-4">Perfect for:</h4>
+                        <ul className="text-white/90 space-y-2 text-left max-w-xs">
+                          <li className="flex items-center gap-2">
+                            <div className="w-2 h-2 bg-success rounded-full"></div>
+                            Office workers with upper back tension
+                          </li>
+                          <li className="flex items-center gap-2">
+                            <div className="w-2 h-2 bg-secondary rounded-full"></div>
+                            People experiencing shoulder stiffness
+                          </li>
+                          <li className="flex items-center gap-2">
+                            <div className="w-2 h-2 bg-accent rounded-full"></div>
+                            Anyone looking to improve posture
+                          </li>
+                          <li className="flex items-center gap-2">
+                            <div className="w-2 h-2 bg-warning rounded-full"></div>
+                            Athletes needing spine mobility
+                          </li>
+                        </ul>
+                      </div>
                     </motion.div>
                   </div>
                 </div>
