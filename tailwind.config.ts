@@ -145,6 +145,24 @@ const config: Config = {
           "70%": { transform: "scale(0.9)" },
           "100%": { transform: "scale(1)", opacity: "1" },
         },
+        "friendly-bounce": {
+          "0%, 20%, 60%, 100%": { transform: "translateY(0)" },
+          "40%": { transform: "translateY(-20px)" },
+          "80%": { transform: "translateY(-10px)" },
+        },
+        "wiggle": {
+          "0%, 7%": { transform: "rotateZ(0)" },
+          "15%": { transform: "rotateZ(-15deg)" },
+          "20%": { transform: "rotateZ(10deg)" },
+          "25%": { transform: "rotateZ(-10deg)" },
+          "30%": { transform: "rotateZ(6deg)" },
+          "35%": { transform: "rotateZ(-4deg)" },
+          "40%, 100%": { transform: "rotateZ(0)" },
+        },
+        "morph": {
+          "0%, 100%": { borderRadius: "60% 40% 30% 70% / 60% 30% 70% 40%" },
+          "50%": { borderRadius: "30% 60% 70% 40% / 50% 60% 30% 60%" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -157,6 +175,9 @@ const config: Config = {
         "slide-up": "slide-up 0.3s ease-out",
         "rotate-3d": "rotate-3d 10s linear infinite",
         "bounce-in": "bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+        "friendly-bounce": "friendly-bounce 2s ease-in-out infinite",
+        "wiggle": "wiggle 2s ease-in-out infinite",
+        "morph": "morph 8s ease-in-out infinite",
       },
       transitionTimingFunction: {
         bounce: "var(--animation-bounce)",

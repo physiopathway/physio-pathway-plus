@@ -146,23 +146,37 @@ const TrustSection = () => {
               <motion.div
                 key={index}
                 variants={statVariants}
-                whileHover={{ y: -5, scale: 1.05 }}
-                className="text-center glass rounded-2xl p-6 shadow-medium card-3d border border-primary/10"
+                whileHover={{ y: -8, scale: 1.08, rotateY: 10 }}
+                whileTap={{ scale: 0.95 }}
+                className="text-center interactive-card glass rounded-3xl p-8 shadow-medium border border-primary/10 group"
               >
-                <div className="flex justify-center mb-4">
-                  <div className="p-3 rounded-full bg-gradient-primary shadow-glow">
-                    <IconComponent className={`h-8 w-8 ${stat.color}`} />
+                <motion.div 
+                  className="flex justify-center mb-6"
+                  whileHover={{ rotate: 360 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <div className="p-4 rounded-2xl bg-gradient-primary shadow-glow pulse-glow">
+                    <IconComponent className={`h-10 w-10 text-white`} />
                   </div>
-                </div>
+                </motion.div>
                 <motion.div
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
-                  transition={{ delay: 0.3 + index * 0.1, type: "spring" }}
-                  className="text-3xl font-bold text-foreground mb-2"
+                  transition={{ delay: 0.3 + index * 0.1, type: "spring", stiffness: 200 }}
+                  className="text-4xl font-bold text-foreground mb-3 glow-text"
                 >
                   {stat.number}
                 </motion.div>
-                <div className="text-sm text-muted-foreground font-medium">{stat.label}</div>
+                <div className="text-sm text-muted-foreground font-medium group-hover:text-primary transition-colors">
+                  {stat.label} 🎯
+                </div>
+                
+                {/* Fun floating elements */}
+                <motion.div
+                  className="absolute -top-1 -right-1 w-3 h-3 bg-primary/30 rounded-full"
+                  animate={{ scale: [1, 1.5, 1], opacity: [0.3, 0.8, 0.3] }}
+                  transition={{ duration: 2, repeat: Infinity, delay: index * 0.3 }}
+                />
               </motion.div>
             );
           })}
@@ -182,44 +196,54 @@ const TrustSection = () => {
               <motion.div
                 key={index}
                 variants={cardVariants}
-                whileHover={{ y: -10, scale: 1.02 }}
-                transition={{ duration: 0.3 }}
+                whileHover={{ y: -12, scale: 1.03, rotateX: 5, rotateY: 5 }}
+                transition={{ duration: 0.4, type: "spring", stiffness: 100 }}
               >
-                <Card className="glass border border-primary/20 shadow-large hover:shadow-glow-accent transition-all duration-500 overflow-hidden card-3d group h-full">
-                  <CardContent className="p-8">
+                <Card className="interactive-card glass border border-primary/20 shadow-large hover:shadow-glow-accent transition-all duration-500 overflow-hidden group h-full rounded-3xl">
+                  <CardContent className="p-10">
                     {/* Icon and Stats */}
-                    <div className="flex items-center justify-between mb-6">
-                      <div className={`p-4 rounded-2xl bg-gradient-to-br ${benefit.color} shadow-glow`}>
-                        <IconComponent className="w-8 h-8 text-white" />
-                      </div>
-                      <motion.span
-                        className={`text-sm font-bold px-4 py-2 rounded-full bg-gradient-to-r ${benefit.color} text-white shadow-medium`}
-                        whileHover={{ scale: 1.1 }}
+                    <div className="flex items-center justify-between mb-8">
+                      <motion.div 
+                        className={`p-5 rounded-3xl bg-gradient-to-br ${benefit.color} shadow-glow group-hover:shadow-glow-accent`}
+                        whileHover={{ rotate: [0, 10, -10, 0], scale: 1.1 }}
+                        transition={{ duration: 0.5 }}
                       >
-                        {benefit.stats}
+                        <IconComponent className="w-10 h-10 text-white" />
+                      </motion.div>
+                      <motion.span
+                        className={`text-sm font-bold px-5 py-3 rounded-full bg-gradient-to-r ${benefit.color} text-white shadow-medium wiggle`}
+                        whileHover={{ scale: 1.15, rotate: 5 }}
+                      >
+                        ⭐ {benefit.stats}
                       </motion.span>
                     </div>
 
                     {/* Title and Description */}
-                    <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
-                      {benefit.title}
-                    </h3>
-                    <p className="text-muted-foreground mb-6 leading-relaxed">
+                    <motion.h3 
+                      className="text-3xl font-bold text-foreground mb-6 group-hover:text-primary transition-colors glow-text"
+                      whileHover={{ scale: 1.02 }}
+                    >
+                      {benefit.title} 🎯
+                    </motion.h3>
+                    <p className="text-muted-foreground mb-8 leading-relaxed text-lg">
                       {benefit.description}
                     </p>
 
                     {/* Features List */}
-                    <div className="grid grid-cols-2 gap-3">
+                    <div className="grid grid-cols-2 gap-4">
                       {benefit.features.map((feature, idx) => (
                         <motion.div
                           key={idx}
                           initial={{ opacity: 0, x: -20 }}
                           whileInView={{ opacity: 1, x: 0 }}
+                          whileHover={{ x: 5, scale: 1.05 }}
                           transition={{ delay: 0.1 * idx }}
-                          className="flex items-center gap-2"
+                          className="flex items-center gap-3 p-3 rounded-2xl bg-primary/5 hover:bg-primary/10 transition-colors magnetic"
                         >
-                          <Zap className="w-4 h-4 text-primary" />
-                          <span className="text-sm font-medium text-foreground">{feature}</span>
+                          <div className="p-1 rounded-full bg-primary/20">
+                            <Zap className="w-4 h-4 text-primary" />
+                          </div>
+                          <span className="text-sm font-medium text-foreground">✨ {feature}</span>
                         </motion.div>
                       ))}
                     </div>

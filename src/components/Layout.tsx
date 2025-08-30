@@ -1,5 +1,6 @@
 import ModernNavigation from "./ModernNavigation";
 import ModernFooter from "./ModernFooter";
+import FloatingHelpButton from "./FloatingHelpButton";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -13,6 +14,7 @@ const Layout = ({ children }: LayoutProps) => {
         {children}
       </main>
       <ModernFooter />
+      <FloatingHelpButton />
     </div>
   );
 };

@@ -159,64 +159,105 @@ const ToolsPreview = () => {
               <motion.div
                 key={tool.id}
                 variants={cardVariants}
-                whileHover={{ y: -8, scale: 1.02 }}
-                transition={{ duration: 0.3 }}
+                whileHover={{ y: -12, scale: 1.03, rotateY: 5 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ duration: 0.4, type: "spring", stiffness: 100 }}
               >
-                <Card className="glass border border-primary/20 shadow-large hover:shadow-glow-accent transition-all duration-500 overflow-hidden card-3d group h-full">
+                <Card className="interactive-card glass border border-primary/20 shadow-large hover:shadow-glow-accent transition-all duration-500 overflow-hidden group h-full rounded-3xl">
                   <CardContent className="p-0">
                     {/* Tool Image */}
-                    <div className="relative h-48 overflow-hidden">
-                      <img
+                    <div className="relative h-52 overflow-hidden rounded-t-3xl">
+                      <motion.img
                         src={tool.image}
                         alt={tool.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-115"
+                        whileHover={{ scale: 1.1 }}
                       />
-                      <div className={`absolute inset-0 bg-gradient-to-br ${tool.color} opacity-60`} />
+                      <div className={`absolute inset-0 bg-gradient-to-br ${tool.color} opacity-70 group-hover:opacity-80 transition-opacity`} />
+                      
+                      {/* Floating Elements */}
+                      <motion.div
+                        className="absolute top-2 left-2 w-4 h-4 bg-white/30 rounded-full"
+                        animate={{ y: [0, -10, 0], opacity: [0.3, 0.8, 0.3] }}
+                        transition={{ duration: 3, repeat: Infinity, delay: index * 0.5 }}
+                      />
+                      <motion.div
+                        className="absolute top-4 right-8 w-3 h-3 bg-white/20 rounded-full"
+                        animate={{ x: [0, 10, 0], opacity: [0.2, 0.6, 0.2] }}
+                        transition={{ duration: 4, repeat: Infinity, delay: index * 0.7 }}
+                      />
                       
                       {/* Overlay Info */}
                       <div className="absolute top-4 left-4 flex gap-2">
-                        <span className="glass text-white text-xs px-3 py-1 rounded-full font-semibold border border-white/20">
-                          {tool.duration}
-                        </span>
-                        <span className="glass text-white text-xs px-3 py-1 rounded-full font-semibold border border-white/20">
-                          {tool.difficulty}
-                        </span>
+                        <motion.span 
+                          className="glass text-white text-xs px-3 py-2 rounded-full font-semibold border border-white/20 backdrop-blur-md"
+                          whileHover={{ scale: 1.1 }}
+                        >
+                          ⏱️ {tool.duration}
+                        </motion.span>
+                        <motion.span 
+                          className="glass text-white text-xs px-3 py-2 rounded-full font-semibold border border-white/20 backdrop-blur-md"
+                          whileHover={{ scale: 1.1 }}
+                        >
+                          📊 {tool.difficulty}
+                        </motion.span>
                       </div>
 
-                      <div className="absolute top-4 right-4">
-                        <div className={`p-3 rounded-full bg-gradient-to-br ${tool.color} shadow-glow`}>
-                          <IconComponent className="w-6 h-6 text-white" />
+                      <motion.div 
+                        className="absolute top-4 right-4"
+                        whileHover={{ rotate: 15, scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                      >
+                        <div className={`p-4 rounded-2xl bg-gradient-to-br ${tool.color} shadow-glow bounce-hover`}>
+                          <IconComponent className="w-7 h-7 text-white" />
                         </div>
-                      </div>
+                      </motion.div>
                     </div>
 
                     {/* Content */}
-                    <div className="p-6">
-                      <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                        {tool.title}
-                      </h3>
-                      <p className="text-muted-foreground mb-4 leading-relaxed">
+                    <div className="p-8">
+                      <motion.h3 
+                        className="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors glow-text"
+                        whileHover={{ scale: 1.02 }}
+                      >
+                        {tool.title} ✨
+                      </motion.h3>
+                      <p className="text-muted-foreground mb-6 leading-relaxed text-base">
                         {tool.description}
                       </p>
 
                       {/* Benefits */}
-                      <div className="flex flex-wrap gap-2 mb-6">
+                      <div className="flex flex-wrap gap-3 mb-8">
                         {tool.benefits.map((benefit, idx) => (
-                          <span
+                          <motion.span
                             key={idx}
-                            className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full font-medium"
+                            className="text-sm bg-primary/10 text-primary px-4 py-2 rounded-full font-medium magnetic"
+                            whileHover={{ scale: 1.05, y: -2 }}
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.2 + idx * 0.1 }}
                           >
-                            {benefit}
-                          </span>
+                            💫 {benefit}
+                          </motion.span>
                         ))}
                       </div>
 
                       {/* CTA Button */}
-                      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                      <motion.div 
+                        whileHover={{ scale: 1.03 }} 
+                        whileTap={{ scale: 0.97 }}
+                      >
                         <Link to={tool.link}>
-                          <Button className={`w-full bg-gradient-to-r ${tool.color} text-white font-bold shadow-glow hover:shadow-glow-accent transition-all duration-300`}>
+                          <Button className={`w-full bg-gradient-to-r ${tool.color} text-white font-bold shadow-glow hover:shadow-glow-accent transition-all duration-300 rounded-2xl py-6 text-lg group/btn`}>
+                            <span className="mr-3">🚀</span>
                             Try This Tool
-                            <ArrowRight className="ml-2 h-5 w-5" />
+                            <motion.div
+                              className="ml-3"
+                              animate={{ x: [0, 5, 0] }}
+                              transition={{ duration: 1.5, repeat: Infinity }}
+                            >
+                              <ArrowRight className="h-5 w-5 group-hover/btn:translate-x-1 transition-transform" />
+                            </motion.div>
                           </Button>
                         </Link>
                       </motion.div>
@@ -236,15 +277,22 @@ const ToolsPreview = () => {
           transition={{ delay: 0.5 }}
           className="text-center"
         >
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <motion.div whileHover={{ scale: 1.05, rotate: 2 }} whileTap={{ scale: 0.95 }}>
             <Link to="/tools">
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="glass border-2 border-primary/30 text-primary hover:bg-primary/10 text-lg px-12 py-6 rounded-2xl shadow-medium font-bold backdrop-blur-md"
+                className="glass border-2 border-primary/30 text-primary hover:bg-primary/10 text-lg px-12 py-6 rounded-3xl shadow-medium font-bold backdrop-blur-md group magnetic"
               >
+                <span className="mr-3">🔍</span>
                 Explore All Tools
-                <ArrowRight className="ml-3 h-6 w-6" />
+                <motion.div
+                  className="ml-3"
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  <ArrowRight className="h-6 w-6 group-hover:translate-x-2 transition-transform" />
+                </motion.div>
               </Button>
             </Link>
           </motion.div>
