@@ -4,60 +4,48 @@
 
 @layer base {
   :root {
-    /* Modern 2025 Color Palette */
+    /* Clean Healthcare Color Palette */
     --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    --foreground: 215 25% 27%;
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card-foreground: 215 25% 27%;
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
+    --popover-foreground: 215 25% 27%;
     
-    /* Bold Primary Colors */
-    --primary: 262 100% 58%; /* Electric Purple */
-    --primary-foreground: 0 0% 98%;
-    --primary-glow: 262 100% 68%;
-    --primary-dark: 262 100% 48%;
+    /* Professional Blue Primary */
+    --primary: 210 100% 56%; /* Healthcare Blue */
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 210 100% 66%;
+    --primary-dark: 210 100% 46%;
     
-    /* Vibrant Secondary Colors */
-    --secondary: 185 100% 52%; /* Cyan Blue */
-    --secondary-foreground: 0 0% 9%;
-    --secondary-glow: 185 100% 62%;
+    /* Clean Secondary Colors */
+    --secondary: 210 14% 96%; /* Light Gray Background */
+    --secondary-foreground: 215 25% 27%;
+    --secondary-dark: 210 14% 89%;
     
-    /* Accent Colors */
-    --accent: 320 100% 58%; /* Hot Pink */
-    --accent-foreground: 0 0% 98%;
-    --accent-glow: 320 100% 68%;
+    /* Accent Colors for Categories */
+    --accent-green: 162 73% 46%; /* Health Green */
+    --accent-orange: 25 95% 53%; /* Nutrition Orange */
+    --accent-purple: 262 52% 47%; /* Wellness Purple */
+    --accent-teal: 180 77% 44%; /* Medical Teal */
     
-    /* Success & Warning */
-    --success: 142 76% 48%; /* Emerald */
-    --success-glow: 142 76% 58%;
-    --warning: 48 100% 50%; /* Golden Yellow */
-    --warning-glow: 48 100% 60%;
+    /* Status Colors */
+    --success: 142 73% 46%;
+    --warning: 25 95% 53%;
+    --destructive: 0 84% 60%;
     
     /* Neutral Colors */
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 262 100% 58%;
+    --muted: 210 14% 96%;
+    --muted-foreground: 215 16% 47%;
+    --border: 210 14% 89%;
+    --input: 210 14% 89%;
+    --ring: 210 100% 56%;
     
-    /* Glass & Blur Effects */
-    --glass: 0 0% 100% / 0.1;
-    --glass-dark: 0 0% 0% / 0.1;
-    
-    /* 3D & Gradient Effects */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-glow)));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
-    --gradient-rainbow: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)), hsl(var(--accent)));
-    --gradient-hero: linear-gradient(135deg, hsl(262 100% 58%), hsl(185 100% 52%), hsl(320 100% 58%));
-    
-    /* Shadows & Glows */
-    --shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-medium: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --shadow-large: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-    --shadow-glow: 0 0 20px hsl(var(--primary) / 0.3);
-    --shadow-glow-accent: 0 0 30px hsl(var(--accent) / 0.4);
+    /* Clean Professional Shadows */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
     
     /* Animation Variables */
     --animation-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -93,17 +81,18 @@
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
     
-    --primary: 262 100% 68%;
-    --primary-foreground: 240 10% 3.9%;
-    --primary-glow: 262 100% 78%;
+    --primary: 210 100% 66%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 210 100% 76%;
     
-    --secondary: 185 100% 62%;
-    --secondary-foreground: 240 10% 3.9%;
-    --secondary-glow: 185 100% 72%;
+    --secondary: 210 14% 83%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-dark: 210 14% 73%;
     
-    --accent: 320 100% 68%;
-    --accent-foreground: 240 10% 3.9%;
-    --accent-glow: 320 100% 78%;
+    --accent-green: 162 73% 56%;
+    --accent-orange: 25 95% 63%;
+    --accent-purple: 262 52% 57%;
+    --accent-teal: 180 77% 54%;
     
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;

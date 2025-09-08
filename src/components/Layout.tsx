@@ -1,6 +1,5 @@
-import ModernNavigation from "./ModernNavigation";
+import ProfessionalNavigation from "./ProfessionalNavigation";
 import ModernFooter from "./ModernFooter";
-import FloatingHelpButton from "./FloatingHelpButton";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -9,12 +8,11 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="min-h-screen flex flex-col">
-      <ModernNavigation />
+      <ProfessionalNavigation />
       <main className="flex-1">
         {children}
       </main>
       <ModernFooter />
-      <FloatingHelpButton />
     </div>
   );
 };
