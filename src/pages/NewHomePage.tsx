@@ -1,7 +1,7 @@
-import HealthcareHomepage from "@/components/HealthcareHomepage";
+import ComprehensiveHomepage from "@/components/ComprehensiveHomepage";
 
 const NewHomePage = () => {
-  return <HealthcareHomepage />;
+  return <ComprehensiveHomepage />;
 };
 
 export default NewHomePage;
