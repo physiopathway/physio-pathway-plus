@@ -1,7 +1,7 @@
-import ComprehensiveHomepage from "@/components/ComprehensiveHomepage";
+import PhysioPathwayHomepage from "@/components/PhysioPathwayHomepage";
 
 const NewHomePage = () => {
-  return <ComprehensiveHomepage />;
+  return <PhysioPathwayHomepage />;
 };
 
 export default NewHomePage;

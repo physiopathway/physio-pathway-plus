@@ -1,4 +1,4 @@
-import ProfessionalNavigation from "./ProfessionalNavigation";
+import PhysioPathwayNavigation from "./PhysioPathwayNavigation";
 import ModernFooter from "./ModernFooter";
 
 interface LayoutProps {
@@ -8,7 +8,7 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="min-h-screen flex flex-col">
-      <ProfessionalNavigation />
+      <PhysioPathwayNavigation />
       <main className="flex-1">
         {children}
       </main>
