@@ -10,6 +10,12 @@ import ExerciseHub from "./pages/ExerciseHub";
 import ToolsPage from "./pages/ToolsPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Disclaimer from "./pages/Disclaimer";
+import AcademyPage from "./pages/AcademyPage";
+import AboutPage from "./pages/AboutPage";
+import BMICalculator from "./pages/tools/BMICalculator";
+import ROMCalculator from "./pages/tools/ROMCalculator";
+import PainScale from "./pages/tools/PainScale";
+import RehabDose from "./pages/tools/RehabDose";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +32,12 @@ const App = () => (
             <Route path="/conditions" element={<ConditionsPage />} />
             <Route path="/exercises" element={<ExerciseHub />} />
             <Route path="/tools" element={<ToolsPage />} />
+            <Route path="/tools/bmi" element={<BMICalculator />} />
+            <Route path="/tools/rom" element={<ROMCalculator />} />
+            <Route path="/tools/pain-scale" element={<PainScale />} />
+            <Route path="/tools/rehab-dose" element={<RehabDose />} />
+            <Route path="/academy" element={<AcademyPage />} />
+            <Route path="/about" element={<AboutPage />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/disclaimer" element={<Disclaimer />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

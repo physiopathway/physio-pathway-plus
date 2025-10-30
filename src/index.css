@@ -13,26 +13,30 @@
     --popover-foreground: 215 25% 27%;
     
     /* Professional Blue Primary */
-    --primary: 210 100% 56%; /* Healthcare Blue */
+    --primary: 210 100% 56%;
     --primary-foreground: 0 0% 100%;
     --primary-light: 210 100% 66%;
     --primary-dark: 210 100% 46%;
+    --primary-glow: 210 100% 70%;
     
     /* Clean Secondary Colors */
-    --secondary: 210 14% 96%; /* Light Gray Background */
-    --secondary-foreground: 215 25% 27%;
-    --secondary-dark: 210 14% 89%;
+    --secondary: 150 60% 48%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-dark: 150 60% 38%;
+    --secondary-glow: 150 60% 60%;
     
-    /* Accent Colors for Categories */
-    --accent-green: 162 73% 46%; /* Health Green */
-    --accent-orange: 25 95% 53%; /* Nutrition Orange */
-    --accent-purple: 262 52% 47%; /* Wellness Purple */
-    --accent-teal: 180 77% 44%; /* Medical Teal */
+    /* Accent Colors */
+    --accent: 280 65% 60%;
+    --accent-foreground: 0 0% 100%;
+    --accent-glow: 280 65% 70%;
     
     /* Status Colors */
     --success: 142 73% 46%;
+    --success-glow: 142 73% 60%;
     --warning: 25 95% 53%;
+    --warning-glow: 25 95% 65%;
     --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
     
     /* Neutral Colors */
     --muted: 210 14% 96%;
@@ -41,11 +45,16 @@
     --input: 210 14% 89%;
     --ring: 210 100% 56%;
     
-    /* Clean Professional Shadows */
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --shadow-card: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(210 100% 56%), hsl(210 100% 70%));
+    --gradient-secondary: linear-gradient(135deg, hsl(150 60% 48%), hsl(150 60% 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(210 100% 56% / 0.95), hsl(280 65% 60% / 0.9));
+    --gradient-accent: linear-gradient(135deg, hsl(280 65% 60%), hsl(280 65% 70%));
+    
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(210 100% 56% / 0.3);
+    --shadow-glow: 0 0 40px hsl(210 100% 70% / 0.4);
+    --shadow-card: 0 4px 20px hsl(210 30% 20% / 0.08);
     
     /* Animation Variables */
     --animation-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -54,14 +63,12 @@
     --animation-normal: 0.3s;
     --animation-slow: 0.5s;
     
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
     --chart-1: 262 100% 58%;
     --chart-2: 185 100% 52%;
     --chart-3: 320 100% 58%;
     --chart-4: 142 76% 48%;
     --chart-5: 48 100% 50%;
-    --radius: 1rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
