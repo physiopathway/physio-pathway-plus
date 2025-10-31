@@ -14,85 +14,85 @@ import {
   Clock,
   Star
 } from "lucide-react";
-import backPainImage from "@/assets/back-pain.jpg";
+import shoulderImage from "@/assets/shoulder-pain.jpg";
 
-const BackPainCondition = () => {
+const ShoulderPainCondition = () => {
   const symptoms = [
-    "Lower back aching or stiffness",
-    "Sharp or shooting pain down the leg",
-    "Muscle spasms in the back or hips",
-    "Pain that worsens with sitting or bending",
-    "Difficulty standing up straight",
-    "Morning stiffness that improves with movement"
+    "Pain when reaching overhead",
+    "Difficulty sleeping on affected side",
+    "Weakness in arm movements",
+    "Clicking or popping sensations",
+    "Reduced range of motion",
+    "Pain radiating down the arm"
   ];
 
   const causes = [
     { 
-      title: "Poor Posture", 
-      description: "Prolonged sitting, slouching, or incorrect lifting techniques",
-      percentage: "65%"
+      title: "Rotator Cuff Injury", 
+      description: "Tears or inflammation of shoulder stabilizing muscles",
+      percentage: "50%"
     },
     { 
-      title: "Muscle Imbalances", 
-      description: "Weak core muscles and tight hip flexors",
+      title: "Frozen Shoulder", 
+      description: "Adhesive capsulitis causing stiffness and pain",
+      percentage: "30%"
+    },
+    { 
+      title: "Impingement Syndrome", 
+      description: "Compression of tendons in shoulder joint",
       percentage: "45%"
     },
     { 
-      title: "Herniated Disc", 
-      description: "Disc material pressing on nearby nerves",
-      percentage: "25%"
-    },
-    { 
       title: "Arthritis", 
-      description: "Age-related wear and tear of spinal joints",
-      percentage: "30%"
+      description: "Degenerative changes in shoulder joint",
+      percentage: "25%"
     }
   ];
 
   const dosList = [
-    "Maintain good posture while sitting and standing",
-    "Strengthen your core muscles with targeted exercises",
-    "Take regular breaks from prolonged sitting",
-    "Use proper lifting techniques (bend your knees)",
-    "Stay active with low-impact exercises like walking",
-    "Apply heat or ice as needed for pain relief",
-    "Sleep with proper spinal alignment"
+    "Perform gentle pendulum exercises daily",
+    "Maintain good posture throughout the day",
+    "Apply ice after activities causing pain",
+    "Gradually increase shoulder mobility",
+    "Strengthen rotator cuff muscles",
+    "Avoid overhead activities initially",
+    "Use ergonomic workspace setup"
   ];
 
   const dontsList = [
-    "Don't stay in bed for extended periods",
-    "Avoid heavy lifting until pain subsides",
-    "Don't ignore persistent or worsening pain",
-    "Avoid high-impact activities during acute pain",
-    "Don't rely solely on pain medications",
-    "Avoid prolonged sitting without breaks",
-    "Don't perform exercises that increase pain"
+    "Don't sleep on the painful shoulder",
+    "Avoid sudden jerky movements",
+    "Don't ignore persistent pain",
+    "Avoid heavy lifting until healed",
+    "Don't skip strengthening exercises",
+    "Avoid prolonged immobilization",
+    "Don't push through sharp pain"
   ];
 
   const exercises = [
     {
-      name: "Knee-to-Chest Stretch",
-      duration: "30 seconds each leg",
+      name: "Pendulum Swings",
+      duration: "2-3 minutes",
       difficulty: "Beginner",
-      description: "Gentle stretch to relieve lower back tension"
+      description: "Gentle movement to maintain shoulder mobility"
     },
     {
-      name: "Cat-Cow Stretch",
-      duration: "10-15 repetitions",
+      name: "Wall Crawls",
+      duration: "10 repetitions",
       difficulty: "Beginner", 
-      description: "Improves spinal mobility and reduces stiffness"
+      description: "Improves overhead reaching ability"
     },
     {
-      name: "Pelvic Tilts",
-      duration: "10-15 repetitions",
-      difficulty: "Beginner",
-      description: "Strengthens core and improves posture"
-    },
-    {
-      name: "Bird Dog",
-      duration: "10 seconds each side",
+      name: "External Rotation",
+      duration: "12-15 repetitions",
       difficulty: "Intermediate",
-      description: "Builds core stability and balance"
+      description: "Strengthens rotator cuff muscles"
+    },
+    {
+      name: "Shoulder Blade Squeezes",
+      duration: "10-12 repetitions",
+      difficulty: "Beginner",
+      description: "Improves posture and scapular control"
     }
   ];
 
@@ -101,14 +101,14 @@ const BackPainCondition = () => {
       {/* Header with Image */}
       <section className="relative py-20 bg-gradient-subtle overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <img src={backPainImage} alt="Back Pain Anatomy" className="w-full h-full object-cover" />
+          <img src={shoulderImage} alt="Shoulder Anatomy" className="w-full h-full object-cover" />
         </div>
         <div className="container relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <Badge className="mb-4" variant="secondary">Condition Guide</Badge>
-            <h1 className="text-4xl font-bold mb-4">Lower Back Pain: Complete Guide</h1>
+            <h1 className="text-4xl font-bold mb-4">Shoulder Pain: Complete Guide</h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Evidence-based information, exercises, and management strategies for lower back pain relief and prevention.
+              Evidence-based information, exercises, and management strategies for shoulder pain relief and recovery.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -117,7 +117,7 @@ const BackPainCondition = () => {
                 Download Complete Guide (PDF)
               </Button>
               <Button variant="outline" size="lg">
-                Take Back Pain Assessment
+                Take Shoulder Assessment
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
@@ -125,7 +125,7 @@ const BackPainCondition = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
                 <Users className="h-8 w-8 text-primary mx-auto mb-2" />
-                <div className="text-2xl font-bold">2.5M+</div>
+                <div className="text-2xl font-bold">2.8M+</div>
                 <div className="text-sm text-muted-foreground">People Affected</div>
               </div>
               <div className="text-center">
@@ -135,12 +135,12 @@ const BackPainCondition = () => {
               </div>
               <div className="text-center">
                 <Star className="h-8 w-8 text-primary mx-auto mb-2" />
-                <div className="text-2xl font-bold">85%</div>
+                <div className="text-2xl font-bold">75%</div>
                 <div className="text-sm text-muted-foreground">Success Rate</div>
               </div>
               <div className="text-center">
                 <Zap className="h-8 w-8 text-primary mx-auto mb-2" />
-                <div className="text-2xl font-bold">2-6 wks</div>
+                <div className="text-2xl font-bold">6-12 wks</div>
                 <div className="text-sm text-muted-foreground">Recovery Time</div>
               </div>
             </div>
@@ -148,7 +148,7 @@ const BackPainCondition = () => {
         </div>
       </section>
 
-      {/* Main Content */}
+      {/* Main Content - same structure as BackPainCondition */}
       <section className="py-16">
         <div className="container max-w-6xl mx-auto">
           <Tabs defaultValue="symptoms" className="space-y-8">
@@ -165,7 +165,7 @@ const BackPainCondition = () => {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <AlertTriangle className="h-6 w-6 text-warning" />
-                    Common Symptoms of Lower Back Pain
+                    Common Symptoms of Shoulder Pain
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -187,11 +187,11 @@ const BackPainCondition = () => {
                         <h4 className="font-semibold text-destructive mb-2">Seek Immediate Medical Attention If:</h4>
                       </div>
                       <ul className="space-y-2 text-sm">
-                        <li>• Severe pain after an injury or fall</li>
-                        <li>• Numbness or weakness in legs</li>
-                        <li>• Loss of bladder or bowel control</li>
-                        <li>• Fever accompanying back pain</li>
-                        <li>• Pain that doesn't improve after 72 hours</li>
+                        <li>• Sudden severe pain after injury</li>
+                        <li>• Inability to move shoulder</li>
+                        <li>• Visible deformity or dislocation</li>
+                        <li>• Chest pain with shoulder pain</li>
+                        <li>• Fever with hot, swollen joint</li>
                       </ul>
                     </div>
                   </div>
@@ -223,8 +223,8 @@ const BackPainCondition = () => {
                   <div className="mt-8 bg-primary/10 rounded-xl p-6 border border-primary/20">
                     <h3 className="font-semibold mb-3 text-primary">💡 Did You Know?</h3>
                     <p className="text-sm">
-                      Most back pain is mechanical, meaning it's related to how you move and use your back muscles. 
-                      The good news is that mechanical back pain often responds very well to physiotherapy and exercise!
+                      The shoulder is the most mobile joint in the body, which makes it more susceptible to injury. 
+                      Regular strengthening of the rotator cuff muscles is key to preventing shoulder problems!
                     </p>
                   </div>
                 </CardContent>
@@ -244,30 +244,30 @@ const BackPainCondition = () => {
                     <div className="bg-accent/10 rounded-xl p-6 border border-accent/20">
                       <h3 className="font-semibold mb-3">🎯 Immediate Relief (0-3 days)</h3>
                       <ul className="space-y-2 text-sm">
-                        <li>• Gentle movement and walking</li>
-                        <li>• Heat/ice therapy</li>
-                        <li>• Pain medication if needed</li>
-                        <li>• Avoid bed rest</li>
+                        <li>• Ice therapy application</li>
+                        <li>• Gentle pendulum exercises</li>
+                        <li>• Pain management</li>
+                        <li>• Rest from aggravating activities</li>
                       </ul>
                     </div>
                     
                     <div className="bg-primary/10 rounded-xl p-6 border border-primary/20">
-                      <h3 className="font-semibold mb-3">🏗️ Recovery Phase (1-4 weeks)</h3>
+                      <h3 className="font-semibold mb-3">🏗️ Recovery Phase (1-8 weeks)</h3>
                       <ul className="space-y-2 text-sm">
-                        <li>• Gentle stretching exercises</li>
-                        <li>• Core strengthening</li>
-                        <li>• Posture correction</li>
-                        <li>• Gradual activity increase</li>
+                        <li>• Range of motion exercises</li>
+                        <li>• Rotator cuff strengthening</li>
+                        <li>• Scapular stabilization</li>
+                        <li>• Progressive resistance training</li>
                       </ul>
                     </div>
                     
                     <div className="bg-success/10 rounded-xl p-6 border border-success/20">
                       <h3 className="font-semibold mb-3">💪 Prevention (Ongoing)</h3>
                       <ul className="space-y-2 text-sm">
-                        <li>• Regular exercise routine</li>
+                        <li>• Maintain shoulder flexibility</li>
+                        <li>• Good posture habits</li>
+                        <li>• Regular strengthening routine</li>
                         <li>• Proper lifting techniques</li>
-                        <li>• Ergonomic workspace</li>
-                        <li>• Stress management</li>
                       </ul>
                     </div>
                   </div>
@@ -281,7 +281,7 @@ const BackPainCondition = () => {
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2 text-success">
                       <CheckCircle2 className="h-6 w-6" />
-                      Do's for Back Pain Recovery
+                      Do's for Shoulder Recovery
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
@@ -320,7 +320,7 @@ const BackPainCondition = () => {
             <TabsContent value="exercises">
               <Card className="card-feature">
                 <CardHeader>
-                  <CardTitle>Recommended Exercises for Back Pain</CardTitle>
+                  <CardTitle>Recommended Exercises for Shoulder Pain</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="grid md:grid-cols-2 gap-6">
@@ -361,4 +361,4 @@ const BackPainCondition = () => {
   );
 };
 
-export default BackPainCondition;
+export default ShoulderPainCondition;

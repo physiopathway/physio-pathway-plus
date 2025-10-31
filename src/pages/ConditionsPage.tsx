@@ -18,7 +18,7 @@ const conditions = [
     exercises: "25+ exercises",
     color: "from-primary to-primary-glow",
     symptoms: ["Muscle stiffness", "Sharp pain", "Limited mobility", "Radiating pain"],
-    link: "/conditions/back-pain"
+    link: "/pain/back-pain"
   },
   {
     id: 2,
@@ -30,7 +30,7 @@ const conditions = [
     exercises: "20+ exercises",
     color: "from-secondary to-secondary-glow",
     symptoms: ["Neck stiffness", "Headaches", "Shoulder tension", "Limited range"],
-    link: "/conditions/neck-pain"
+    link: "/pain/neck-pain"
   },
   {
     id: 3,
@@ -42,7 +42,7 @@ const conditions = [
     exercises: "30+ exercises",
     color: "from-accent to-accent-glow",
     symptoms: ["Joint pain", "Swelling", "Instability", "Reduced strength"],
-    link: "/conditions/knee-pain"
+    link: "/pain/knee-pain"
   },
   {
     id: 4,
@@ -54,7 +54,7 @@ const conditions = [
     exercises: "35+ exercises",
     color: "from-success to-success-glow",
     symptoms: ["Limited motion", "Pain at night", "Weakness", "Clicking sounds"],
-    link: "/conditions/shoulder-pain"
+    link: "/pain/shoulder-pain"
   },
   {
     id: 5,

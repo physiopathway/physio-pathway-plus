@@ -16,6 +16,11 @@ import BMICalculator from "./pages/tools/BMICalculator";
 import ROMCalculator from "./pages/tools/ROMCalculator";
 import PainScale from "./pages/tools/PainScale";
 import RehabDose from "./pages/tools/RehabDose";
+import BackPainCondition from "./pages/BackPainCondition";
+import KneePainCondition from "./pages/KneePainCondition";
+import ShoulderPainCondition from "./pages/ShoulderPainCondition";
+import NeckPainCondition from "./pages/NeckPainCondition";
+import OrthopedicPage from "./pages/OrthopedicPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -36,6 +41,11 @@ const App = () => (
             <Route path="/tools/rom" element={<ROMCalculator />} />
             <Route path="/tools/pain-scale" element={<PainScale />} />
             <Route path="/tools/rehab-dose" element={<RehabDose />} />
+            <Route path="/pain/back-pain" element={<BackPainCondition />} />
+            <Route path="/pain/knee-pain" element={<KneePainCondition />} />
+            <Route path="/pain/shoulder-pain" element={<ShoulderPainCondition />} />
+            <Route path="/pain/neck-pain" element={<NeckPainCondition />} />
+            <Route path="/knowledge/orthopedic" element={<OrthopedicPage />} />
             <Route path="/academy" element={<AcademyPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />

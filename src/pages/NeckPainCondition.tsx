@@ -14,85 +14,85 @@ import {
   Clock,
   Star
 } from "lucide-react";
-import backPainImage from "@/assets/back-pain.jpg";
+import neckImage from "@/assets/neck-pain.jpg";
 
-const BackPainCondition = () => {
+const NeckPainCondition = () => {
   const symptoms = [
-    "Lower back aching or stiffness",
-    "Sharp or shooting pain down the leg",
-    "Muscle spasms in the back or hips",
-    "Pain that worsens with sitting or bending",
-    "Difficulty standing up straight",
-    "Morning stiffness that improves with movement"
+    "Neck stiffness and limited movement",
+    "Headaches starting from the neck",
+    "Shoulder and upper back tension",
+    "Pain when looking up or down",
+    "Tingling or numbness in arms",
+    "Muscle spasms in neck region"
   ];
 
   const causes = [
     { 
       title: "Poor Posture", 
-      description: "Prolonged sitting, slouching, or incorrect lifting techniques",
-      percentage: "65%"
+      description: "Forward head posture from prolonged screen time",
+      percentage: "70%"
     },
     { 
-      title: "Muscle Imbalances", 
-      description: "Weak core muscles and tight hip flexors",
-      percentage: "45%"
+      title: "Muscle Strain", 
+      description: "Overuse or sudden movements causing tension",
+      percentage: "55%"
     },
     { 
-      title: "Herniated Disc", 
-      description: "Disc material pressing on nearby nerves",
-      percentage: "25%"
+      title: "Cervical Disc Issues", 
+      description: "Herniated or bulging discs in neck",
+      percentage: "20%"
     },
     { 
-      title: "Arthritis", 
-      description: "Age-related wear and tear of spinal joints",
-      percentage: "30%"
+      title: "Whiplash", 
+      description: "Sudden acceleration-deceleration injury",
+      percentage: "15%"
     }
   ];
 
   const dosList = [
-    "Maintain good posture while sitting and standing",
-    "Strengthen your core muscles with targeted exercises",
-    "Take regular breaks from prolonged sitting",
-    "Use proper lifting techniques (bend your knees)",
-    "Stay active with low-impact exercises like walking",
-    "Apply heat or ice as needed for pain relief",
-    "Sleep with proper spinal alignment"
+    "Maintain proper posture while working",
+    "Take frequent breaks from desk work",
+    "Perform gentle neck stretches daily",
+    "Use ergonomic pillow for sleep",
+    "Keep screen at eye level",
+    "Stay hydrated throughout the day",
+    "Apply heat therapy for chronic pain"
   ];
 
   const dontsList = [
-    "Don't stay in bed for extended periods",
-    "Avoid heavy lifting until pain subsides",
-    "Don't ignore persistent or worsening pain",
-    "Avoid high-impact activities during acute pain",
-    "Don't rely solely on pain medications",
-    "Avoid prolonged sitting without breaks",
-    "Don't perform exercises that increase pain"
+    "Don't crane neck forward at screens",
+    "Avoid sleeping on stomach",
+    "Don't ignore persistent headaches",
+    "Avoid sudden jerky neck movements",
+    "Don't hold phone between ear and shoulder",
+    "Avoid heavy bags on one shoulder",
+    "Don't skip regular movement breaks"
   ];
 
   const exercises = [
     {
-      name: "Knee-to-Chest Stretch",
-      duration: "30 seconds each leg",
+      name: "Chin Tucks",
+      duration: "10-15 repetitions",
       difficulty: "Beginner",
-      description: "Gentle stretch to relieve lower back tension"
+      description: "Corrects forward head posture"
     },
     {
-      name: "Cat-Cow Stretch",
-      duration: "10-15 repetitions",
+      name: "Neck Rotations",
+      duration: "10 each side",
       difficulty: "Beginner", 
-      description: "Improves spinal mobility and reduces stiffness"
+      description: "Improves neck mobility and flexibility"
     },
     {
-      name: "Pelvic Tilts",
-      duration: "10-15 repetitions",
+      name: "Shoulder Blade Pinches",
+      duration: "12-15 repetitions",
       difficulty: "Beginner",
-      description: "Strengthens core and improves posture"
+      description: "Strengthens upper back muscles"
     },
     {
-      name: "Bird Dog",
-      duration: "10 seconds each side",
-      difficulty: "Intermediate",
-      description: "Builds core stability and balance"
+      name: "Neck Side Bends",
+      duration: "30 seconds each side",
+      difficulty: "Beginner",
+      description: "Stretches neck lateral muscles"
     }
   ];
 
@@ -101,14 +101,14 @@ const BackPainCondition = () => {
       {/* Header with Image */}
       <section className="relative py-20 bg-gradient-subtle overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <img src={backPainImage} alt="Back Pain Anatomy" className="w-full h-full object-cover" />
+          <img src={neckImage} alt="Neck Anatomy" className="w-full h-full object-cover" />
         </div>
         <div className="container relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <Badge className="mb-4" variant="secondary">Condition Guide</Badge>
-            <h1 className="text-4xl font-bold mb-4">Lower Back Pain: Complete Guide</h1>
+            <h1 className="text-4xl font-bold mb-4">Neck Pain: Complete Guide</h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Evidence-based information, exercises, and management strategies for lower back pain relief and prevention.
+              Evidence-based information, exercises, and management strategies for neck pain relief and posture correction.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -117,7 +117,7 @@ const BackPainCondition = () => {
                 Download Complete Guide (PDF)
               </Button>
               <Button variant="outline" size="lg">
-                Take Back Pain Assessment
+                Take Neck Assessment
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </div>
@@ -125,22 +125,22 @@ const BackPainCondition = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
                 <Users className="h-8 w-8 text-primary mx-auto mb-2" />
-                <div className="text-2xl font-bold">2.5M+</div>
+                <div className="text-2xl font-bold">3.5M+</div>
                 <div className="text-sm text-muted-foreground">People Affected</div>
               </div>
               <div className="text-center">
                 <Clock className="h-8 w-8 text-primary mx-auto mb-2" />
-                <div className="text-2xl font-bold">15 min</div>
+                <div className="text-2xl font-bold">10 min</div>
                 <div className="text-sm text-muted-foreground">Daily Exercise</div>
               </div>
               <div className="text-center">
                 <Star className="h-8 w-8 text-primary mx-auto mb-2" />
-                <div className="text-2xl font-bold">85%</div>
+                <div className="text-2xl font-bold">90%</div>
                 <div className="text-sm text-muted-foreground">Success Rate</div>
               </div>
               <div className="text-center">
                 <Zap className="h-8 w-8 text-primary mx-auto mb-2" />
-                <div className="text-2xl font-bold">2-6 wks</div>
+                <div className="text-2xl font-bold">1-4 wks</div>
                 <div className="text-sm text-muted-foreground">Recovery Time</div>
               </div>
             </div>
@@ -165,7 +165,7 @@ const BackPainCondition = () => {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <AlertTriangle className="h-6 w-6 text-warning" />
-                    Common Symptoms of Lower Back Pain
+                    Common Symptoms of Neck Pain
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -187,11 +187,11 @@ const BackPainCondition = () => {
                         <h4 className="font-semibold text-destructive mb-2">Seek Immediate Medical Attention If:</h4>
                       </div>
                       <ul className="space-y-2 text-sm">
-                        <li>• Severe pain after an injury or fall</li>
-                        <li>• Numbness or weakness in legs</li>
-                        <li>• Loss of bladder or bowel control</li>
-                        <li>• Fever accompanying back pain</li>
-                        <li>• Pain that doesn't improve after 72 hours</li>
+                        <li>• Severe pain after accident</li>
+                        <li>• Weakness in arms or hands</li>
+                        <li>• Loss of bladder/bowel control</li>
+                        <li>• Severe headache with stiff neck</li>
+                        <li>• Fever with neck stiffness</li>
                       </ul>
                     </div>
                   </div>
@@ -223,8 +223,8 @@ const BackPainCondition = () => {
                   <div className="mt-8 bg-primary/10 rounded-xl p-6 border border-primary/20">
                     <h3 className="font-semibold mb-3 text-primary">💡 Did You Know?</h3>
                     <p className="text-sm">
-                      Most back pain is mechanical, meaning it's related to how you move and use your back muscles. 
-                      The good news is that mechanical back pain often responds very well to physiotherapy and exercise!
+                      For every inch your head moves forward from its neutral position, it adds 10 pounds of additional 
+                      weight on your neck muscles! Proper posture is crucial for preventing neck pain.
                     </p>
                   </div>
                 </CardContent>
@@ -244,30 +244,30 @@ const BackPainCondition = () => {
                     <div className="bg-accent/10 rounded-xl p-6 border border-accent/20">
                       <h3 className="font-semibold mb-3">🎯 Immediate Relief (0-3 days)</h3>
                       <ul className="space-y-2 text-sm">
-                        <li>• Gentle movement and walking</li>
-                        <li>• Heat/ice therapy</li>
-                        <li>• Pain medication if needed</li>
-                        <li>• Avoid bed rest</li>
+                        <li>• Gentle neck stretches</li>
+                        <li>• Heat or ice application</li>
+                        <li>• Pain relief medication</li>
+                        <li>• Avoid prolonged static positions</li>
                       </ul>
                     </div>
                     
                     <div className="bg-primary/10 rounded-xl p-6 border border-primary/20">
-                      <h3 className="font-semibold mb-3">🏗️ Recovery Phase (1-4 weeks)</h3>
+                      <h3 className="font-semibold mb-3">🏗️ Recovery Phase (1-3 weeks)</h3>
                       <ul className="space-y-2 text-sm">
-                        <li>• Gentle stretching exercises</li>
-                        <li>• Core strengthening</li>
-                        <li>• Posture correction</li>
-                        <li>• Gradual activity increase</li>
+                        <li>• Posture correction exercises</li>
+                        <li>• Neck strengthening program</li>
+                        <li>• Upper back mobilization</li>
+                        <li>• Ergonomic adjustments</li>
                       </ul>
                     </div>
                     
                     <div className="bg-success/10 rounded-xl p-6 border border-success/20">
                       <h3 className="font-semibold mb-3">💪 Prevention (Ongoing)</h3>
                       <ul className="space-y-2 text-sm">
-                        <li>• Regular exercise routine</li>
-                        <li>• Proper lifting techniques</li>
+                        <li>• Maintain good posture</li>
+                        <li>• Regular desk breaks</li>
                         <li>• Ergonomic workspace</li>
-                        <li>• Stress management</li>
+                        <li>• Stress management techniques</li>
                       </ul>
                     </div>
                   </div>
@@ -281,7 +281,7 @@ const BackPainCondition = () => {
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2 text-success">
                       <CheckCircle2 className="h-6 w-6" />
-                      Do's for Back Pain Recovery
+                      Do's for Neck Recovery
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
@@ -320,7 +320,7 @@ const BackPainCondition = () => {
             <TabsContent value="exercises">
               <Card className="card-feature">
                 <CardHeader>
-                  <CardTitle>Recommended Exercises for Back Pain</CardTitle>
+                  <CardTitle>Recommended Exercises for Neck Pain</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="grid md:grid-cols-2 gap-6">
@@ -361,4 +361,4 @@ const BackPainCondition = () => {
   );
 };
 
-export default BackPainCondition;
+export default NeckPainCondition;
