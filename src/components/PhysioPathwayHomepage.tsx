@@ -7,6 +7,14 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import heroImage from "@/assets/hero-shoulder-anatomy.jpg";
+import physioConsultation from "@/assets/physio-consultation.jpg";
+import backPainImage from "@/assets/back-pain.jpg";
+import kneePainImage from "@/assets/knee-pain.jpg";
+import shoulderPainImage from "@/assets/shoulder-pain.jpg";
+import neckPainImage from "@/assets/neck-pain.jpg";
+import articleBackPain from "@/assets/article-back-pain.jpg";
+import articleNeuroRehab from "@/assets/article-neuro-rehab.jpg";
+import articleSportsInjury from "@/assets/article-sports-injury.jpg";
 
 const knowledgeCategories = [
   { name: "Orthopedic", icon: Activity, href: "/knowledge/orthopedic", description: "Musculoskeletal conditions & treatments", color: "text-blue-600" },
@@ -27,28 +35,28 @@ const painManagementGuides = [
   { 
     name: "Back Pain Relief", 
     href: "/pain/back-pain", 
-    image: "/placeholder.svg",
+    image: backPainImage,
     exercises: "12 exercises",
     duration: "6 weeks program"
   },
   { 
     name: "Knee Pain Recovery", 
     href: "/pain/knee-pain", 
-    image: "/placeholder.svg",
+    image: kneePainImage,
     exercises: "10 exercises",
     duration: "8 weeks program"
   },
   { 
     name: "Shoulder Rehabilitation", 
     href: "/pain/shoulder-pain", 
-    image: "/placeholder.svg",
+    image: shoulderPainImage,
     exercises: "15 exercises",
     duration: "10 weeks program"
   },
   { 
     name: "Neck Pain Management", 
     href: "/pain/neck-pain", 
-    image: "/placeholder.svg",
+    image: neckPainImage,
     exercises: "8 exercises",
     duration: "4 weeks program"
   },
@@ -68,7 +76,7 @@ const latestArticles = [
     author: "Dr. Sarah Johnson",
     date: "March 15, 2024",
     readTime: "8 min read",
-    image: "/placeholder.svg"
+    image: articleBackPain
   },
   {
     title: "Post-Stroke Rehabilitation: A Comprehensive Guide",
@@ -76,7 +84,7 @@ const latestArticles = [
     author: "Dr. Michael Chen",
     date: "March 12, 2024",
     readTime: "12 min read",
-    image: "/placeholder.svg"
+    image: articleNeuroRehab
   },
   {
     title: "Sports Injury Prevention for Athletes",
@@ -84,7 +92,7 @@ const latestArticles = [
     author: "Dr. Emily Rodriguez",
     date: "March 10, 2024",
     readTime: "6 min read",
-    image: "/placeholder.svg"
+    image: articleSportsInjury
   },
 ];
 
@@ -138,7 +146,7 @@ const PhysioPathwayHomepage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
               <img 
-                src="/placeholder.svg" 
+                src={physioConsultation} 
                 alt="Professional physiotherapy team" 
                 className="rounded-2xl shadow-2xl w-full h-[400px] object-cover"
               />

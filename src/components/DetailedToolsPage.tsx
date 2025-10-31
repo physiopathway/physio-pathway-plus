@@ -12,6 +12,11 @@ import {
   CheckCircle, ArrowRight, Zap, TrendingUp, Award
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import painQuizTool from "@/assets/pain-quiz-tool.jpg";
+import postureTestTool from "@/assets/posture-test-tool.jpg";
+import progressTrackerTool from "@/assets/progress-tracker-tool.jpg";
+import stretchGeneratorTool from "@/assets/stretch-generator-tool.jpg";
+import assessmentTool from "@/assets/assessment-tool.jpg";
 
 const DetailedToolsPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -32,7 +37,7 @@ const DetailedToolsPage = () => {
       title: "AI Pain Assessment Pro",
       category: "Assessment & Diagnosis",
       description: "Advanced AI-powered diagnostic tool that analyzes your symptoms, medical history, and movement patterns to provide accurate pain assessment and treatment recommendations.",
-      image: "/api/placeholder/400/250",
+      image: painQuizTool,
       rating: 4.9,
       users: "15,000+",
       duration: "5-10 mins",
@@ -48,7 +53,7 @@ const DetailedToolsPage = () => {
       title: "Movement Analysis Studio",
       category: "Exercise & Movement",
       description: "Upload movement videos and get professional biomechanical analysis with corrective exercise recommendations from certified physiotherapists.",
-      image: "/api/placeholder/400/250",
+      image: assessmentTool,
       rating: 4.8,
       users: "12,500+",
       duration: "15-20 mins",
@@ -64,7 +69,7 @@ const DetailedToolsPage = () => {
       title: "Recovery Progress Tracker",
       category: "Progress Tracking",
       description: "Comprehensive recovery monitoring system with pain scales, mobility metrics, exercise compliance tracking, and detailed progress analytics.",
-      image: "/api/placeholder/400/250",
+      image: progressTrackerTool,
       rating: 4.7,
       users: "18,000+",
       duration: "2-5 mins daily",
@@ -80,7 +85,7 @@ const DetailedToolsPage = () => {
       title: "Posture Perfect Scanner",
       category: "Assessment & Diagnosis",
       description: "Take a photo and get instant posture analysis with personalized correction strategies and exercise recommendations for better alignment.",
-      image: "/api/placeholder/400/250",
+      image: postureTestTool,
       rating: 4.6,
       users: "20,000+",
       duration: "3-5 mins",
@@ -96,7 +101,7 @@ const DetailedToolsPage = () => {
       title: "Smart Exercise Planner",
       category: "Exercise & Movement",
       description: "Intelligent workout generator that creates personalized exercise routines based on your condition, fitness level, and available equipment.",
-      image: "/api/placeholder/400/250",
+      image: stretchGeneratorTool,
       rating: 4.8,
       users: "16,500+",
       duration: "10-45 mins",
@@ -112,7 +117,7 @@ const DetailedToolsPage = () => {
       title: "Pain Pattern Mapper",
       category: "Assessment & Diagnosis",
       description: "Interactive body map tool to track pain locations, intensity, and patterns over time with detailed reporting and trend analysis.",
-      image: "/api/placeholder/400/250",
+      image: painQuizTool,
       rating: 4.5,
       users: "11,000+",
       duration: "5-8 mins",

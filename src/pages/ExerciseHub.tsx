@@ -7,6 +7,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Search, Filter, Download, Play, Clock, Star, Target, Zap } from "lucide-react";
+import catCowImage from "@/assets/exercise-cat-cow.jpg";
+import wallAngelsImage from "@/assets/exercise-wall-angels.jpg";
+import pelvicTiltImage from "@/assets/exercise-pelvic-tilt.jpg";
+import backPainImage from "@/assets/article-back-pain.jpg";
+import shoulderSqueezeImage from "@/assets/exercise-shoulder-squeeze.jpg";
+import calfRaiseImage from "@/assets/exercise-calf-raise.jpg";
 
 const categories = [
   { name: "All", count: 150 },
@@ -27,7 +33,7 @@ const exercises = [
     difficulty: "Beginner",
     duration: "2-3 minutes",
     equipment: "None",
-    image: "/api/placeholder/400/300",
+    image: catCowImage,
     color: "from-primary to-primary-glow",
     rating: 4.8,
     completions: 15420
@@ -40,7 +46,7 @@ const exercises = [
     difficulty: "Beginner",
     duration: "3-5 minutes",
     equipment: "Wall",
-    image: "/api/placeholder/400/300",
+    image: wallAngelsImage,
     color: "from-secondary to-secondary-glow",
     rating: 4.7,
     completions: 12350
@@ -53,7 +59,7 @@ const exercises = [
     difficulty: "Intermediate",
     duration: "5-8 minutes",
     equipment: "Mat",
-    image: "/api/placeholder/400/300",
+    image: pelvicTiltImage,
     color: "from-accent to-accent-glow",
     rating: 4.9,
     completions: 8760
@@ -66,7 +72,7 @@ const exercises = [
     difficulty: "Beginner",
     duration: "2-4 minutes",
     equipment: "Mat",
-    image: "/api/placeholder/400/300",
+    image: backPainImage,
     color: "from-success to-success-glow",
     rating: 4.6,
     completions: 18930
@@ -79,7 +85,7 @@ const exercises = [
     difficulty: "Beginner",
     duration: "3-5 minutes",
     equipment: "None",
-    image: "/api/placeholder/400/300",
+    image: shoulderSqueezeImage,
     color: "from-warning to-warning-glow",
     rating: 4.5,
     completions: 11240
@@ -92,7 +98,7 @@ const exercises = [
     difficulty: "Intermediate",
     duration: "3-4 minutes",
     equipment: "Wall",
-    image: "/api/placeholder/400/300",
+    image: calfRaiseImage,
     color: "from-primary to-accent",
     rating: 4.7,
     completions: 9650

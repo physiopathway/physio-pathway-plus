@@ -6,13 +6,21 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Clock, Star, Users, Heart, Zap, Target } from "lucide-react";
 import { Link } from "react-router-dom";
+import backPainImage from "@/assets/back-pain.jpg";
+import neckPainImage from "@/assets/neck-pain.jpg";
+import kneePainImage from "@/assets/knee-pain.jpg";
+import shoulderPainImage from "@/assets/shoulder-pain.jpg";
+import arthritisRehab from "@/assets/arthritis-rehab.jpg";
+import sportsInjury from "@/assets/article-sports-injury.jpg";
+import postSurgeryRehab from "@/assets/post-surgery-rehab.jpg";
+import workplaceErgonomics from "@/assets/workplace-ergonomics.jpg";
 
 const conditions = [
   {
     id: 1,
     title: "Lower Back Pain",
     description: "Comprehensive treatment for acute and chronic lower back pain with targeted exercises and pain management strategies.",
-    image: "/api/placeholder/400/300",
+    image: backPainImage,
     severity: "Common",
     duration: "2-12 weeks",
     exercises: "25+ exercises",
@@ -24,7 +32,7 @@ const conditions = [
     id: 2,
     title: "Neck Pain & Stiffness",
     description: "Relief techniques for cervical spine issues, tension headaches, and neck muscle strain from poor posture.",
-    image: "/api/placeholder/400/300",
+    image: neckPainImage,
     severity: "Moderate",
     duration: "1-8 weeks",
     exercises: "20+ exercises",
@@ -36,7 +44,7 @@ const conditions = [
     id: 3,
     title: "Knee Injuries",
     description: "Rehabilitation programs for ACL tears, meniscus injuries, runner's knee, and general knee pain recovery.",
-    image: "/api/placeholder/400/300",
+    image: kneePainImage,
     severity: "Variable",
     duration: "4-16 weeks",
     exercises: "30+ exercises",
@@ -48,7 +56,7 @@ const conditions = [
     id: 4,
     title: "Shoulder Problems",
     description: "Treatment for frozen shoulder, rotator cuff injuries, impingement syndrome, and shoulder blade dysfunction.",
-    image: "/api/placeholder/400/300",
+    image: shoulderPainImage,
     severity: "Moderate",
     duration: "6-20 weeks",
     exercises: "35+ exercises",
@@ -60,7 +68,7 @@ const conditions = [
     id: 5,
     title: "Arthritis Management",
     description: "Joint mobility exercises and pain management for osteoarthritis and rheumatoid arthritis patients.",
-    image: "/api/placeholder/400/300",
+    image: arthritisRehab,
     severity: "Chronic",
     duration: "Ongoing",
     exercises: "40+ exercises",
@@ -72,7 +80,7 @@ const conditions = [
     id: 6,
     title: "Sports Injuries",
     description: "Specialized rehabilitation for athletes including sprains, strains, and sport-specific injury prevention.",
-    image: "/api/placeholder/400/300",
+    image: sportsInjury,
     severity: "Variable",
     duration: "2-24 weeks",
     exercises: "50+ exercises",
@@ -84,7 +92,7 @@ const conditions = [
     id: 7,
     title: "Post-Surgery Rehab",
     description: "Guided recovery programs for post-operative patients to restore function and prevent complications.",
-    image: "/api/placeholder/400/300",
+    image: postSurgeryRehab,
     severity: "Complex",
     duration: "8-26 weeks",
     exercises: "45+ exercises",
@@ -96,7 +104,7 @@ const conditions = [
     id: 8,
     title: "Workplace Ergonomics",
     description: "Prevention and treatment of desk-related injuries, repetitive strain injuries, and postural problems.",
-    image: "/api/placeholder/400/300",
+    image: workplaceErgonomics,
     severity: "Preventive",
     duration: "4-12 weeks",
     exercises: "15+ exercises",

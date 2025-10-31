@@ -5,13 +5,16 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, Clock, User, Tag } from "lucide-react";
 import { Link } from "react-router-dom";
+import articleBackPain from "@/assets/article-back-pain.jpg";
+import workplaceErgonomics from "@/assets/workplace-ergonomics.jpg";
+import articleSportsInjury from "@/assets/article-sports-injury.jpg";
 
 const blogPosts = [
   {
     id: 1,
     title: "5 Essential Exercises for Lower Back Pain Relief",
     excerpt: "Discover evidence-based exercises that can help alleviate chronic lower back pain and prevent future episodes. Learn proper form and progression techniques.",
-    image: "/api/placeholder/400/250",
+    image: articleBackPain,
     author: "Dr. Sarah Chen",
     date: "March 15, 2024",
     readTime: "6 min read",
@@ -23,7 +26,7 @@ const blogPosts = [
     id: 2,
     title: "The Science Behind Posture and Workplace Ergonomics",
     excerpt: "Explore how modern work environments affect our posture and learn practical solutions to maintain spinal health during long working hours.",
-    image: "/api/placeholder/400/250",
+    image: workplaceErgonomics,
     author: "Dr. Michael Torres",
     date: "March 12, 2024",
     readTime: "8 min read",
@@ -35,7 +38,7 @@ const blogPosts = [
     id: 3,
     title: "Recovery After Sports Injuries: A Complete Guide",
     excerpt: "Comprehensive guide to sports injury rehabilitation, from initial treatment through return-to-play protocols. Expert insights and recovery timelines.",
-    image: "/api/placeholder/400/250",
+    image: articleSportsInjury,
     author: "Dr. Lisa Rodriguez",
     date: "March 10, 2024",
     readTime: "10 min read",

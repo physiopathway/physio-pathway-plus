@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import universityImage from "@/assets/university-physio.jpg";
 
 const universities = [
   {
@@ -12,7 +13,7 @@ const universities = [
     duration: "4 years",
     students: "250+ students",
     ranking: "#1 in Australia",
-    image: "/placeholder.svg"
+    image: universityImage
   },
   {
     name: "McGill University",
@@ -21,7 +22,7 @@ const universities = [
     duration: "2 years",
     students: "180+ students",
     ranking: "Top 50 Global",
-    image: "/placeholder.svg"
+    image: universityImage
   },
   {
     name: "King's College London",
@@ -30,7 +31,7 @@ const universities = [
     duration: "3 years",
     students: "200+ students",
     ranking: "Top 10 UK",
-    image: "/placeholder.svg"
+    image: universityImage
   },
   {
     name: "University of Toronto",
@@ -39,7 +40,7 @@ const universities = [
     duration: "2 years",
     students: "160+ students",
     ranking: "Top 20 Global",
-    image: "/placeholder.svg"
+    image: universityImage
   },
   {
     name: "University of Sydney",
@@ -48,7 +49,7 @@ const universities = [
     duration: "4 years",
     students: "220+ students",
     ranking: "#2 in Australia",
-    image: "/placeholder.svg"
+    image: universityImage
   },
   {
     name: "Duke University",
@@ -57,7 +58,7 @@ const universities = [
     duration: "3 years",
     students: "150+ students",
     ranking: "Top 5 USA",
-    image: "/placeholder.svg"
+    image: universityImage
   },
 ];
 
