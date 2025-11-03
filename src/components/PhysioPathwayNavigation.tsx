@@ -178,9 +178,11 @@ const PhysioPathwayNavigation = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Button variant="default" size="sm">
-              Get Started
-            </Button>
+            <Link to="/tools">
+              <Button variant="default" size="sm" className="shadow-glow hover:shadow-glow-accent">
+                Get Started
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -245,9 +247,11 @@ const PhysioPathwayNavigation = () => {
                 About
               </Link>
 
-              <Button variant="default" className="w-full mt-4">
-                Get Started
-              </Button>
+              <Link to="/tools">
+                <Button variant="default" className="w-full mt-4 shadow-glow hover:shadow-glow-accent">
+                  Get Started
+                </Button>
+              </Link>
             </nav>
           </div>
         )}

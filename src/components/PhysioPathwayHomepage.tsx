@@ -115,7 +115,7 @@ const PhysioPathwayHomepage = () => {
             
             {/* Mini Dashboard Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-12">
-              <Link to="/pain" className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-lg hover:bg-white/20 transition-all hover:scale-105 hover:shadow-xl group">
+              <Link to="/conditions" className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-lg hover:bg-white/20 transition-all hover:scale-105 hover:shadow-xl group">
                 <Heart className="w-12 h-12 mb-4 text-white group-hover:scale-110 transition-transform" />
                 <h3 className="text-lg font-semibold mb-2">Pain Management</h3>
                 <p className="text-sm text-gray-200 mb-3">Explore Guides & Exercises</p>
@@ -161,9 +161,11 @@ const PhysioPathwayHomepage = () => {
               <p className="text-lg text-muted-foreground mb-8">
                 Our mission is to democratize access to quality physiotherapy knowledge and empower individuals on their journey to optimal movement and wellness.
               </p>
-              <Button size="lg" variant="default">
-                Learn More About Us <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              <Link to="/about">
+                <Button size="lg" variant="default" className="shadow-glow hover:shadow-glow-accent">
+                  Learn More About Us <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -192,9 +194,11 @@ const PhysioPathwayHomepage = () => {
           </div>
           
           <div className="text-center mt-12">
-            <Button size="lg" variant="outline">
-              View All Articles <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+            <Link to="/academy">
+              <Button size="lg" variant="outline" className="hover:shadow-glow">
+                View All Articles <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -235,9 +239,11 @@ const PhysioPathwayHomepage = () => {
           </div>
           
           <div className="text-center mt-12">
-            <Button size="lg" variant="default">
-              Explore All Programs <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+            <Link to="/conditions">
+              <Button size="lg" variant="default" className="shadow-glow hover:shadow-glow-accent">
+                Explore All Programs <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -267,9 +273,11 @@ const PhysioPathwayHomepage = () => {
           </div>
           
           <div className="text-center mt-12">
-            <Button size="lg" variant="outline">
-              View All Tools <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+            <Link to="/tools">
+              <Button size="lg" variant="outline" className="hover:shadow-glow">
+                View All Tools <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -315,9 +323,11 @@ const PhysioPathwayHomepage = () => {
           </div>
           
           <div className="text-center mt-12">
-            <Button size="lg" variant="default">
-              Explore Academy <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+            <Link to="/academy">
+              <Button size="lg" variant="default" className="shadow-glow hover:shadow-glow-accent">
+                Explore Academy <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -363,27 +373,11 @@ const PhysioPathwayHomepage = () => {
           </div>
           
           <div className="text-center mt-12">
-            <Button size="lg" variant="outline">
-              Read All Articles <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Newsletter Section */}
-      <section className="py-20 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-4">Stay Updated with PhysioPathway</h2>
-          <p className="text-xl mb-8 opacity-90">Get the latest evidence-based research, exercises, and recovery tips delivered to your inbox</p>
-          <div className="max-w-md mx-auto flex gap-4">
-            <Input 
-              type="email" 
-              placeholder="Enter your email" 
-              className="bg-white text-foreground h-12"
-            />
-            <Button size="lg" variant="secondary" className="whitespace-nowrap">
-              Subscribe
-            </Button>
+            <Link to="/academy">
+              <Button size="lg" variant="outline" className="hover:shadow-glow">
+                Read All Articles <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

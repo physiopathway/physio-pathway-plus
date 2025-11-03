@@ -36,6 +36,7 @@ const App = () => (
             <Route path="/" element={<NewHomePage />} />
             <Route path="/conditions" element={<ConditionsPage />} />
             <Route path="/exercises" element={<ExerciseHub />} />
+            <Route path="/pain/exercises" element={<ExerciseHub />} />
             <Route path="/tools" element={<ToolsPage />} />
             <Route path="/tools/bmi" element={<BMICalculator />} />
             <Route path="/tools/rom" element={<ROMCalculator />} />

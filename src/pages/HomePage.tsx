@@ -1,7 +1,6 @@
 
 import ModernHeroSection from "@/components/ModernHeroSection";
 import ConditionsGrid from "@/components/ConditionsGrid";
-import NewsletterSection from "@/components/NewsletterSection";
 import assessmentImage from "@/assets/assessment-tool.jpg";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -457,8 +456,6 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-
-      <NewsletterSection />
     </div>
   );
 };
