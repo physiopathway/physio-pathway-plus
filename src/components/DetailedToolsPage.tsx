@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -19,6 +21,7 @@ import stretchGeneratorTool from "@/assets/stretch-generator-tool.jpg";
 import assessmentTool from "@/assets/assessment-tool.jpg";
 
 const DetailedToolsPage = () => {
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedDifficulty, setSelectedDifficulty] = useState("all");
@@ -181,6 +184,13 @@ const DetailedToolsPage = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <div className="container mx-auto px-4 pt-8">
+        <Button variant="ghost" onClick={() => navigate(-1)} className="mb-4">
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          Back
+        </Button>
+      </div>
+      
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary/10 via-background to-secondary/10 py-16">
         <div className="container mx-auto px-4">

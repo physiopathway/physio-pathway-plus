@@ -211,8 +211,8 @@ const BlogHighlights = () => {
 
                     {/* Read More Button */}
                     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                      <Link to={`/blog/${post.id}`}>
-                        <Button 
+                      <Link to={`/article/${post.id}`}>
+                        <Button
                           variant="outline" 
                           className={`w-full glass border-2 bg-gradient-to-r ${post.color} bg-clip-border text-transparent border-transparent hover:bg-opacity-10 font-bold`}
                           style={{

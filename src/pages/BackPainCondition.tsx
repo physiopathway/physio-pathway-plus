@@ -2,12 +2,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useNavigate } from "react-router-dom";
 import { 
   AlertTriangle, 
   CheckCircle2, 
   XCircle, 
   Download, 
   ArrowRight,
+  ArrowLeft,
   Lightbulb,
   Zap,
   Users,
@@ -17,6 +19,7 @@ import {
 import backPainImage from "@/assets/back-pain.jpg";
 
 const BackPainCondition = () => {
+  const navigate = useNavigate();
   const symptoms = [
     "Lower back aching or stiffness",
     "Sharp or shooting pain down the leg",
@@ -98,6 +101,13 @@ const BackPainCondition = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <div className="container mx-auto px-4 pt-8">
+        <Button variant="ghost" onClick={() => navigate(-1)} className="mb-4">
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          Back
+        </Button>
+      </div>
+      
       {/* Header with Image */}
       <section className="relative py-20 bg-gradient-subtle overflow-hidden">
         <div className="absolute inset-0 opacity-10">

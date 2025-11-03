@@ -22,6 +22,10 @@ import ShoulderPainCondition from "./pages/ShoulderPainCondition";
 import NeckPainCondition from "./pages/NeckPainCondition";
 import OrthopedicPage from "./pages/OrthopedicPage";
 import NotFound from "./pages/NotFound";
+import KnowledgeCategories from "./pages/KnowledgeCategories";
+import CategoryPage from "./pages/CategoryPage";
+import ArticlePage from "./pages/ArticlePage";
+import BlogPage from "./pages/BlogPage";
 
 const queryClient = new QueryClient();
 
@@ -46,8 +50,13 @@ const App = () => (
             <Route path="/pain/knee-pain" element={<KneePainCondition />} />
             <Route path="/pain/shoulder-pain" element={<ShoulderPainCondition />} />
             <Route path="/pain/neck-pain" element={<NeckPainCondition />} />
+            <Route path="/knowledge" element={<KnowledgeCategories />} />
+            <Route path="/knowledge/:categoryId" element={<CategoryPage />} />
             <Route path="/knowledge/orthopedic" element={<OrthopedicPage />} />
+            <Route path="/article/:articleId" element={<ArticlePage />} />
+            <Route path="/blog" element={<BlogPage />} />
             <Route path="/academy" element={<AcademyPage />} />
+            <Route path="/academy/:universityId" element={<AcademyPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/disclaimer" element={<Disclaimer />} />

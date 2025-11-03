@@ -6,7 +6,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Search, Filter, Download, Play, Clock, Star, Target, Zap } from "lucide-react";
+import { ArrowRight, Search, Filter, Download, Play, Clock, Star, Target, Zap, ArrowLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import catCowImage from "@/assets/exercise-cat-cow.jpg";
 import wallAngelsImage from "@/assets/exercise-wall-angels.jpg";
 import pelvicTiltImage from "@/assets/exercise-pelvic-tilt.jpg";
@@ -22,6 +23,45 @@ const categories = [
   { name: "Posture", count: 25 },
   { name: "Desk Stretches", count: 18 },
   { name: "Core", count: 22 }
+];
+
+const exercisePrograms = [
+  {
+    title: "Lower Back Pain Relief Program",
+    description: "12-week progressive program designed to reduce chronic lower back pain",
+    duration: "12 weeks",
+    difficulty: "Beginner",
+    exercises: 15,
+    completions: 8540,
+    effectiveness: "92% success rate"
+  },
+  {
+    title: "Posture Correction System",
+    description: "8-week program to correct forward head posture and rounded shoulders",
+    duration: "8 weeks",
+    difficulty: "Beginner",
+    exercises: 12,
+    completions: 6230,
+    effectiveness: "88% improvement"
+  },
+  {
+    title: "Post-Surgery Knee Rehabilitation",
+    description: "16-week comprehensive recovery program for ACL and meniscus surgeries",
+    duration: "16 weeks",
+    difficulty: "Intermediate",
+    exercises: 24,
+    completions: 3410,
+    effectiveness: "95% return to activity"
+  },
+  {
+    title: "Athletic Performance Enhancement",
+    description: "Advanced mobility and strength program for competitive athletes",
+    duration: "10 weeks",
+    difficulty: "Advanced",
+    exercises: 20,
+    completions: 4120,
+    effectiveness: "89% performance gain"
+  }
 ];
 
 const exercises = [
@@ -106,6 +146,7 @@ const exercises = [
 ];
 
 const ExerciseHub = () => {
+  const navigate = useNavigate();
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -131,6 +172,13 @@ const ExerciseHub = () => {
 
   return (
     <div className="min-h-screen pt-16 bg-gradient-to-br from-background via-muted/30 to-background">
+      <div className="container mx-auto px-4 pt-8">
+        <Button variant="ghost" onClick={() => navigate(-1)} className="mb-4">
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          Back
+        </Button>
+      </div>
+      
       {/* Hero Section */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0">
@@ -251,9 +299,70 @@ const ExerciseHub = () => {
         </div>
       </section>
 
+      {/* Exercise Programs Section */}
+      <section className="pb-12">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-bold mb-4 text-gradient">Evidence-Based Programs</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Comprehensive rehabilitation programs designed by expert physiotherapists
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            {exercisePrograms.map((program, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ y: -5 }}
+              >
+                <Card className="glass border-primary/20 hover:shadow-glow-accent transition-all duration-300 h-full">
+                  <CardContent className="p-6">
+                    <Badge className="mb-3">{program.difficulty}</Badge>
+                    <h3 className="text-lg font-bold mb-2">{program.title}</h3>
+                    <p className="text-sm text-muted-foreground mb-4">{program.description}</p>
+                    <div className="space-y-2 text-sm mb-4">
+                      <div className="flex justify-between">
+                        <span className="text-muted-foreground">Duration:</span>
+                        <span className="font-semibold">{program.duration}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-muted-foreground">Exercises:</span>
+                        <span className="font-semibold">{program.exercises}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-muted-foreground">Success:</span>
+                        <span className="font-semibold text-success">{program.effectiveness}</span>
+                      </div>
+                    </div>
+                    <Button className="w-full btn-gradient">Start Program</Button>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Exercises Grid */}
       <section className="pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl font-bold mb-4 text-gradient">Individual Exercises</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Targeted exercises for specific conditions and goals
+            </p>
+          </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

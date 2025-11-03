@@ -1,11 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Clock, Star, Users, Heart, Zap, Target } from "lucide-react";
-import { Link } from "react-router-dom";
+import { ArrowRight, ArrowLeft, Clock, Star, Users, Heart, Zap, Target } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
 import backPainImage from "@/assets/back-pain.jpg";
 import neckPainImage from "@/assets/neck-pain.jpg";
 import kneePainImage from "@/assets/knee-pain.jpg";
@@ -115,6 +116,9 @@ const conditions = [
 ];
 
 const ConditionsPage = () => {
+  const navigate = useNavigate();
+  const [activeCategory, setActiveCategory] = useState("All");
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -156,6 +160,13 @@ const ConditionsPage = () => {
 
   return (
     <div className="min-h-screen pt-16 bg-gradient-to-br from-background via-muted/30 to-background">
+      <div className="container mx-auto px-4 pt-8">
+        <Button variant="ghost" onClick={() => navigate(-1)} className="mb-4">
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          Back
+        </Button>
+      </div>
+      
       {/* Hero Section */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0">

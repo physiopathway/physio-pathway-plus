@@ -1,5 +1,6 @@
-import { Search, GraduationCap, MapPin, Clock, BookOpen, Award, Users } from "lucide-react";
+import { Search, GraduationCap, MapPin, Clock, BookOpen, Award, Users, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate, Link } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -70,8 +71,17 @@ const careerPaths = [
 ];
 
 const AcademyPage = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-background">
+      <div className="container mx-auto px-4 pt-8">
+        <Button variant="ghost" onClick={() => navigate(-1)} className="mb-4">
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          Back
+        </Button>
+      </div>
+      
       {/* Hero Section */}
       <section className="bg-gradient-primary py-20 text-primary-foreground">
         <div className="container mx-auto px-4">
@@ -129,46 +139,71 @@ const AcademyPage = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {universities.map((uni, index) => (
-              <Card 
-                key={index}
-                className="overflow-hidden hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 group animate-fade-in"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="relative h-48 bg-gradient-primary overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <GraduationCap className="w-24 h-24 text-primary-foreground/20 group-hover:scale-110 transition-transform duration-500" />
-                  </div>
-                  <Badge className="absolute top-4 right-4 bg-accent">{uni.ranking}</Badge>
-                </div>
-                
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
-                    {uni.name}
-                  </h3>
-                  
-                  <div className="space-y-2 mb-4">
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <MapPin className="w-4 h-4 mr-2" />
-                      {uni.location}
+              <Link to={`/academy/${uni.name.toLowerCase().replace(/\s+/g, '-')}`} key={index}>
+                <Card 
+                  className="overflow-hidden hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 group animate-fade-in cursor-pointer"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <div className="relative h-48 bg-gradient-primary overflow-hidden">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <GraduationCap className="w-24 h-24 text-primary-foreground/20 group-hover:scale-110 transition-transform duration-500" />
                     </div>
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <BookOpen className="w-4 h-4 mr-2" />
-                      {uni.program}
-                    </div>
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <Clock className="w-4 h-4 mr-2" />
-                      {uni.duration}
-                    </div>
-                    <div className="flex items-center text-sm text-muted-foreground">
-                      <Users className="w-4 h-4 mr-2" />
-                      {uni.students}
-                    </div>
+                    <Badge className="absolute top-4 right-4 bg-accent">{uni.ranking}</Badge>
                   </div>
                   
-                  <Button className="w-full" variant="outline">Learn More</Button>
-                </div>
-              </Card>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+                      {uni.name}
+                    </h3>
+                    
+                    <div className="space-y-2 mb-4">
+                      <div className="flex items-center text-sm text-muted-foreground">
+                        <MapPin className="w-4 h-4 mr-2" />
+                        {uni.location}
+                      </div>
+                      <div className="flex items-center text-sm text-muted-foreground">
+                        <BookOpen className="w-4 h-4 mr-2" />
+                        {uni.program}
+                      </div>
+                      <div className="flex items-center text-sm text-muted-foreground">
+                        <Clock className="w-4 h-4 mr-2" />
+                        {uni.duration}
+                      </div>
+                      <div className="flex items-center text-sm text-muted-foreground">
+                        <Users className="w-4 h-4 mr-2" />
+                        {uni.students}
+                      </div>
+                    </div>
+                    
+                    <Button className="w-full" variant="outline">Learn More</Button>
+                  </div>
+                </Card>
+              </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Academy Sections */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">Why Study Physiotherapy?</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="p-6 hover:shadow-elegant transition-all">
+              <Award className="w-12 h-12 text-primary mb-4" />
+              <h3 className="text-xl font-bold mb-3">High Demand Career</h3>
+              <p className="text-muted-foreground">Growing demand for physiotherapists worldwide with excellent job security and career progression opportunities.</p>
+            </Card>
+            <Card className="p-6 hover:shadow-elegant transition-all">
+              <Users className="w-12 h-12 text-primary mb-4" />
+              <h3 className="text-xl font-bold mb-3">Make a Difference</h3>
+              <p className="text-muted-foreground">Help people recover from injuries, manage pain, and improve their quality of life every day.</p>
+            </Card>
+            <Card className="p-6 hover:shadow-elegant transition-all">
+              <BookOpen className="w-12 h-12 text-primary mb-4" />
+              <h3 className="text-xl font-bold mb-3">Diverse Specializations</h3>
+              <p className="text-muted-foreground">Choose from sports, pediatrics, neurology, geriatrics, and many other specialized fields.</p>
+            </Card>
           </div>
         </div>
       </section>
