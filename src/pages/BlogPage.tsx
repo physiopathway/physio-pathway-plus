@@ -7,17 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowLeft, Search, Clock, User, Calendar, Filter } from "lucide-react";
 
-const allArticles = [
-  { id: 1, title: "Understanding Musculoskeletal Disorders", category: "Orthopedic", readTime: "12 min", author: "Dr. Sarah Chen", date: "March 15, 2024" },
-  { id: 2, title: "Post-Surgical Rehabilitation Protocols", category: "Orthopedic", readTime: "15 min", author: "Dr. Michael Torres", date: "March 12, 2024" },
-  { id: 3, title: "Manual Therapy Techniques", category: "Orthopedic", readTime: "10 min", author: "Dr. Lisa Rodriguez", date: "March 10, 2024" },
-  { id: 6, title: "Stroke Recovery: The First 90 Days", category: "Neurological", readTime: "16 min", author: "Dr. Robert Chen", date: "March 14, 2024" },
-  { id: 7, title: "Parkinson's Disease Management", category: "Neurological", readTime: "13 min", author: "Dr. Maria Garcia", date: "March 11, 2024" },
-  { id: 11, title: "ACL Reconstruction Recovery Guide", category: "Sports", readTime: "17 min", author: "Dr. Jennifer Smith", date: "March 13, 2024" },
-  { id: 12, title: "Preventing Common Running Injuries", category: "Sports", readTime: "11 min", author: "Dr. Mark Johnson", date: "March 10, 2024" },
-  { id: 16, title: "Understanding Chronic Pain Mechanisms", category: "Pain Management", readTime: "13 min", author: "Dr. Sarah Mitchell", date: "March 12, 2024" },
-  { id: 21, title: "Developmental Milestones and Delays", category: "Pediatric", readTime: "12 min", author: "Dr. Emily Rogers", date: "March 11, 2024" }
-];
+import { allArticles } from "@/data/articlesData";
 
 const categories = ["All", "Orthopedic", "Neurological", "Sports", "Pain Management", "Pediatric"];
 

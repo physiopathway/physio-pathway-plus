@@ -8,42 +8,120 @@ import { Link } from "react-router-dom";
 import articleBackPain from "@/assets/article-back-pain.jpg";
 import workplaceErgonomics from "@/assets/workplace-ergonomics.jpg";
 import articleSportsInjury from "@/assets/article-sports-injury.jpg";
+import kneeRehab from "@/assets/articles/knee-rehabilitation.jpg";
+import elderlyCare from "@/assets/articles/elderly-care.jpg";
+import sportsMassage from "@/assets/articles/sports-massage.jpg";
+import prenatalCare from "@/assets/articles/prenatal-care.jpg";
+import pediatricTherapy from "@/assets/articles/pediatric-therapy.jpg";
+import hydrotherapy from "@/assets/articles/hydrotherapy.jpg";
 
 const blogPosts = [
   {
     id: 1,
-    title: "5 Essential Exercises for Lower Back Pain Relief",
-    excerpt: "Discover evidence-based exercises that can help alleviate chronic lower back pain and prevent future episodes. Learn proper form and progression techniques.",
+    title: "Understanding Musculoskeletal Disorders",
+    excerpt: "Comprehensive guide to understanding, diagnosing, and treating common musculoskeletal conditions affecting millions worldwide.",
     image: articleBackPain,
     author: "Dr. Sarah Chen",
     date: "March 15, 2024",
-    readTime: "6 min read",
-    category: "Treatment",
-    tags: ["Back Pain", "Exercises", "Prevention"],
+    readTime: "12 min read",
+    category: "Orthopedic",
+    tags: ["Musculoskeletal", "Treatment", "Prevention"],
     color: "from-primary to-primary-glow"
   },
   {
     id: 2,
-    title: "The Science Behind Posture and Workplace Ergonomics",
-    excerpt: "Explore how modern work environments affect our posture and learn practical solutions to maintain spinal health during long working hours.",
-    image: workplaceErgonomics,
+    title: "Post-Surgical Rehabilitation Protocols",
+    excerpt: "Evidence-based rehabilitation protocols for optimal recovery after orthopedic surgery, from immediate post-op care to return to activity.",
+    image: kneeRehab,
     author: "Dr. Michael Torres",
     date: "March 12, 2024",
-    readTime: "8 min read",
-    category: "Prevention",
-    tags: ["Posture", "Ergonomics", "Workplace Health"],
+    readTime: "15 min read",
+    category: "Orthopedic",
+    tags: ["Surgery", "Recovery", "Rehabilitation"],
     color: "from-secondary to-secondary-glow"
   },
   {
     id: 3,
-    title: "Recovery After Sports Injuries: A Complete Guide",
-    excerpt: "Comprehensive guide to sports injury rehabilitation, from initial treatment through return-to-play protocols. Expert insights and recovery timelines.",
-    image: articleSportsInjury,
+    title: "Manual Therapy Techniques for Pain Relief",
+    excerpt: "Exploring evidence-based manual therapy techniques that provide effective pain relief and restore movement in musculoskeletal conditions.",
+    image: workplaceErgonomics,
     author: "Dr. Lisa Rodriguez",
     date: "March 10, 2024",
     readTime: "10 min read",
-    category: "Sports Medicine",
-    tags: ["Sports Injuries", "Recovery", "Rehabilitation"],
+    category: "Orthopedic",
+    tags: ["Manual Therapy", "Pain Relief", "Treatment"],
+    color: "from-accent to-accent-glow"
+  },
+  {
+    id: 4,
+    title: "Stroke Recovery: The First 90 Days",
+    excerpt: "Critical rehabilitation strategies during the first 90 days after stroke to maximize neuroplasticity and functional recovery.",
+    image: elderlyCare,
+    author: "Dr. Robert Chen",
+    date: "March 14, 2024",
+    readTime: "16 min read",
+    category: "Neurological",
+    tags: ["Stroke", "Neuroplasticity", "Recovery"],
+    color: "from-primary to-primary-glow"
+  },
+  {
+    id: 5,
+    title: "ACL Reconstruction Recovery Guide",
+    excerpt: "Complete roadmap for ACL reconstruction recovery, from surgery through return to sport, with evidence-based protocols and milestones.",
+    image: sportsMassage,
+    author: "Dr. Jennifer Smith",
+    date: "March 13, 2024",
+    readTime: "17 min read",
+    category: "Sports",
+    tags: ["ACL", "Surgery", "Sports Medicine"],
+    color: "from-secondary to-secondary-glow"
+  },
+  {
+    id: 6,
+    title: "Prenatal Physiotherapy: Preparing for Motherhood",
+    excerpt: "Essential physiotherapy techniques for pregnant women to maintain health, reduce pain, and prepare for childbirth.",
+    image: prenatalCare,
+    author: "Dr. Emma Wilson",
+    date: "March 11, 2024",
+    readTime: "14 min read",
+    category: "Women's Health",
+    tags: ["Pregnancy", "Prenatal Care", "Exercise"],
+    color: "from-accent to-accent-glow"
+  },
+  {
+    id: 7,
+    title: "Pediatric Physical Therapy: Early Intervention",
+    excerpt: "Understanding developmental milestones and how early intervention can help children reach their full potential through targeted therapy.",
+    image: pediatricTherapy,
+    author: "Dr. David Martinez",
+    date: "March 9, 2024",
+    readTime: "13 min read",
+    category: "Pediatric",
+    tags: ["Children", "Development", "Early Intervention"],
+    color: "from-primary to-primary-glow"
+  },
+  {
+    id: 8,
+    title: "Aquatic Therapy: Healing in Water",
+    excerpt: "Discover how hydrotherapy provides a unique environment for rehabilitation, reducing pain while improving strength and mobility.",
+    image: hydrotherapy,
+    author: "Dr. Amanda Lee",
+    date: "March 8, 2024",
+    readTime: "11 min read",
+    category: "Specialized Therapy",
+    tags: ["Hydrotherapy", "Aquatic Therapy", "Rehabilitation"],
+    color: "from-secondary to-secondary-glow"
+  },
+  {
+    id: 9,
+    title: "The Science of Workplace Ergonomics",
+    excerpt: "Evidence-based strategies for optimizing your workspace to prevent musculoskeletal disorders and improve productivity.",
+    image: articleSportsInjury,
+    author: "Dr. Kevin Brown",
+    date: "March 7, 2024",
+    readTime: "9 min read",
+    category: "Prevention",
+    tags: ["Ergonomics", "Workplace", "Prevention"],
     color: "from-accent to-accent-glow"
   }
 ];

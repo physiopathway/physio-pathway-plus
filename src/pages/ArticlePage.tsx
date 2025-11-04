@@ -4,10 +4,16 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Clock, User, Calendar, Share2, Bookmark, ThumbsUp } from "lucide-react";
+import { getArticleById } from "@/data/articlesData";
 
 const ArticlePage = () => {
   const { articleId } = useParams();
   const navigate = useNavigate();
+  const article = getArticleById(Number(articleId));
+
+  if (!article) {
+    return <div className="min-h-screen pt-20 flex items-center justify-center">Article not found</div>;
+  }
 
   return (
     <div className="min-h-screen pt-20 bg-background">
@@ -27,23 +33,23 @@ const ArticlePage = () => {
             animate={{ opacity: 1, y: 0 }}
           >
             <div className="mb-6">
-              <Badge className="mb-4">Orthopedic Physiotherapy</Badge>
+              <Badge className="mb-4">{article.category}</Badge>
               <h1 className="text-5xl font-bold mb-6 text-gradient">
-                Understanding Musculoskeletal Disorders
+                {article.title}
               </h1>
               
               <div className="flex flex-wrap items-center gap-6 text-muted-foreground mb-6">
                 <div className="flex items-center gap-2">
                   <User className="w-5 h-5" />
-                  <span>Dr. Sarah Chen</span>
+                  <span>{article.author}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Calendar className="w-5 h-5" />
-                  <span>March 15, 2024</span>
+                  <span>{article.date}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Clock className="w-5 h-5" />
-                  <span>12 min read</span>
+                  <span>{article.readTime}</span>
                 </div>
               </div>
 
@@ -68,54 +74,21 @@ const ArticlePage = () => {
                 <div className="prose prose-lg max-w-none">
                   <h2 className="text-3xl font-bold mb-4">Introduction</h2>
                   <p className="text-muted-foreground mb-6 leading-relaxed">
-                    Musculoskeletal disorders affect millions of people worldwide, impacting their quality of life
-                    and ability to perform daily activities. Understanding these conditions is crucial for effective
-                    treatment and prevention.
+                    {article.content.introduction}
                   </p>
 
-                  <h2 className="text-3xl font-bold mb-4 mt-8">Common Musculoskeletal Conditions</h2>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
-                    The most prevalent musculoskeletal disorders include:
-                  </p>
-                  <ul className="list-disc pl-6 mb-6 text-muted-foreground space-y-2">
-                    <li>Osteoarthritis - degenerative joint disease affecting cartilage</li>
-                    <li>Tendinitis - inflammation of tendons from overuse</li>
-                    <li>Bursitis - inflammation of fluid-filled sacs near joints</li>
-                    <li>Sprains and strains - ligament and muscle injuries</li>
-                    <li>Herniated discs - spinal disc problems causing nerve compression</li>
-                  </ul>
-
-                  <h2 className="text-3xl font-bold mb-4 mt-8">Diagnosis and Assessment</h2>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    Proper diagnosis involves a comprehensive assessment including patient history, physical
-                    examination, and when necessary, imaging studies. Our evidence-based approach ensures
-                    accurate identification of the underlying cause.
-                  </p>
-
-                  <h2 className="text-3xl font-bold mb-4 mt-8">Treatment Approaches</h2>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
-                    Treatment strategies are tailored to each patient and may include:
-                  </p>
-                  <ul className="list-disc pl-6 mb-6 text-muted-foreground space-y-2">
-                    <li>Manual therapy techniques for pain relief and mobility</li>
-                    <li>Therapeutic exercises to strengthen and stabilize</li>
-                    <li>Modalities such as heat, ice, and electrical stimulation</li>
-                    <li>Education on posture and body mechanics</li>
-                    <li>Home exercise programs for continued progress</li>
-                  </ul>
-
-                  <h2 className="text-3xl font-bold mb-4 mt-8">Prevention Strategies</h2>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    Preventing musculoskeletal disorders requires a proactive approach including regular exercise,
-                    proper ergonomics, maintaining healthy weight, and addressing issues early before they become
-                    chronic problems.
-                  </p>
+                  {article.content.sections.map((section, index) => (
+                    <div key={index}>
+                      <h2 className="text-3xl font-bold mb-4 mt-8">{section.title}</h2>
+                      <p className="text-muted-foreground mb-6 leading-relaxed">
+                        {section.content}
+                      </p>
+                    </div>
+                  ))}
 
                   <h2 className="text-3xl font-bold mb-4 mt-8">Conclusion</h2>
                   <p className="text-muted-foreground mb-6 leading-relaxed">
-                    Understanding musculoskeletal disorders empowers patients to take control of their health.
-                    With proper treatment and prevention strategies, most conditions can be effectively managed
-                    to restore function and improve quality of life.
+                    {article.content.conclusion}
                   </p>
                 </div>
               </CardContent>
