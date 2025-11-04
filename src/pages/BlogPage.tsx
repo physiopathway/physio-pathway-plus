@@ -9,7 +9,21 @@ import { ArrowLeft, Search, Clock, User, Calendar, Filter } from "lucide-react";
 
 import { allArticles } from "@/data/articlesData";
 
-const categories = ["All", "Orthopedic", "Neurological", "Sports", "Pain Management", "Pediatric"];
+const categoryMapping: Record<string, string> = {
+  "All": "All",
+  "Orthopedic": "orthopedic",
+  "Neurological": "neurological", 
+  "Sports": "sports",
+  "Pain Management": "pain-management",
+  "Pediatric": "pediatric",
+  "Geriatric": "geriatric",
+  "Manual Therapy": "manual-therapy",
+  "Workplace": "workplace",
+  "Rehabilitation": "rehabilitation",
+  "Innovative": "innovative"
+};
+
+const categories = Object.keys(categoryMapping);
 
 const BlogPage = () => {
   const navigate = useNavigate();
@@ -17,8 +31,10 @@ const BlogPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   const filteredArticles = allArticles.filter(article => {
-    const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = selectedCategory === "All" || article.category === selectedCategory;
+    const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                          article.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+    const categoryValue = categoryMapping[selectedCategory] || selectedCategory;
+    const matchesCategory = selectedCategory === "All" || article.category === categoryValue;
     return matchesSearch && matchesCategory;
   });
 
@@ -94,27 +110,40 @@ const BlogPage = () => {
               >
                 <Link to={`/article/${article.id}`}>
                   <Card className="glass border-primary/20 hover:shadow-glow transition-all duration-300 h-full cursor-pointer group">
-                    <CardContent className="p-6">
-                      <div className="flex items-center gap-2 mb-4">
-                        <Badge variant="outline">{article.category}</Badge>
-                        <Badge variant="secondary" className="flex items-center gap-1">
-                          <Clock className="w-3 h-3" />
-                          {article.readTime}
-                        </Badge>
+                    <CardContent className="p-0">
+                      <div className="relative h-48 overflow-hidden rounded-t-lg">
+                        <img 
+                          src={article.image} 
+                          alt={article.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                        <div className="absolute top-4 left-4">
+                          <Badge className="bg-primary text-primary-foreground">{article.category}</Badge>
+                        </div>
+                        <div className="absolute top-4 right-4 flex items-center gap-2 glass rounded-full px-3 py-1 border border-white/20">
+                          <Clock className="w-3 h-3 text-white" />
+                          <span className="text-white text-xs font-medium">{article.readTime}</span>
+                        </div>
                       </div>
                       
-                      <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
-                        {article.title}
-                      </h3>
+                      <div className="p-6">
+                        <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                          {article.title}
+                        </h3>
+                        <p className="text-muted-foreground mb-4 line-clamp-2">
+                          {article.excerpt}
+                        </p>
 
-                      <div className="flex items-center justify-between pt-4 border-t border-muted">
-                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <User className="w-4 h-4" />
-                          {article.author}
-                        </div>
-                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                          <Calendar className="w-4 h-4" />
-                          {article.date.split(',')[0]}
+                        <div className="flex items-center justify-between pt-4 border-t border-muted">
+                          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                            <User className="w-4 h-4" />
+                            {article.author}
+                          </div>
+                          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                            <Calendar className="w-4 h-4" />
+                            {article.date}
+                          </div>
                         </div>
                       </div>
                     </CardContent>

@@ -21,7 +21,7 @@ export const allArticles: Article[] = [
   {
     id: 1,
     title: "Understanding Musculoskeletal Disorders",
-    category: "Orthopedic",
+    category: "orthopedic",
     readTime: "12 min",
     author: "Dr. Sarah Chen",
     date: "March 15, 2024",
@@ -57,7 +57,7 @@ export const allArticles: Article[] = [
   {
     id: 2,
     title: "Post-Surgical Rehabilitation Protocols",
-    category: "Orthopedic",
+    category: "rehabilitation",
     readTime: "15 min",
     author: "Dr. Michael Torres",
     date: "March 12, 2024",
@@ -93,7 +93,7 @@ export const allArticles: Article[] = [
   {
     id: 3,
     title: "Manual Therapy Techniques for Pain Relief",
-    category: "Orthopedic",
+    category: "manual-therapy",
     readTime: "10 min",
     author: "Dr. Lisa Rodriguez",
     date: "March 10, 2024",
@@ -129,7 +129,7 @@ export const allArticles: Article[] = [
   {
     id: 4,
     title: "Stroke Recovery: The First 90 Days",
-    category: "Neurological",
+    category: "neurological",
     readTime: "16 min",
     author: "Dr. Robert Chen",
     date: "March 14, 2024",
@@ -169,7 +169,7 @@ export const allArticles: Article[] = [
   {
     id: 5,
     title: "ACL Reconstruction Recovery Guide",
-    category: "Sports",
+    category: "sports",
     readTime: "17 min",
     author: "Dr. Jennifer Smith",
     date: "March 13, 2024",
@@ -205,9 +205,187 @@ export const allArticles: Article[] = [
       ],
       conclusion: "ACL reconstruction recovery is a marathon, not a sprint. Following a structured, progressive rehabilitation program under guidance of qualified professionals optimizes outcomes. Patience, dedication to exercises, and meeting objective criteria before advancement through phases reduces re-injury risk and ensures successful return to sport and activities."
     }
+  },
+  {
+    id: 6,
+    title: "Prenatal Physiotherapy: Preparing for Motherhood",
+    category: "geriatric",
+    readTime: "14 min",
+    author: "Dr. Emma Wilson",
+    date: "March 11, 2024",
+    excerpt: "Essential physiotherapy techniques for pregnant women to maintain health, reduce pain, and prepare for childbirth.",
+    image: "/src/assets/articles/prenatal-care.jpg",
+    content: {
+      introduction: "Pregnancy brings significant physical changes that can lead to discomfort and pain. Prenatal physiotherapy provides safe, effective interventions to manage these challenges while preparing the body for labor and delivery. Understanding how physiotherapy can support a healthy pregnancy empowers expectant mothers to maintain activity levels and reduce complications.",
+      sections: [
+        {
+          title: "Common Pregnancy-Related Conditions",
+          content: "Pelvic girdle pain affects up to 50% of pregnant women, causing discomfort in the pubic symphysis and sacroiliac joints. Lower back pain results from postural changes and hormonal effects on ligaments. Diastasis recti, or abdominal separation, requires specific exercises for management. Carpal tunnel syndrome from fluid retention causes hand numbness. Leg cramps and swelling are common, especially in later trimesters. Each condition benefits from specific physiotherapy interventions tailored to pregnancy."
+        },
+        {
+          title: "Safe Exercise During Pregnancy",
+          content: "Regular exercise during pregnancy improves outcomes for both mother and baby. Cardiovascular activities like walking and swimming maintain fitness safely. Pelvic floor exercises prevent incontinence and prepare for delivery. Core stability work supports the growing belly and prevents back pain. Stretching maintains flexibility and reduces muscle tension. Modifications ensure safety as pregnancy progresses. Exercise intensity should allow conversation throughout, and warning signs require immediate cessation and medical evaluation."
+        },
+        {
+          title: "Pelvic Floor Preparation",
+          content: "The pelvic floor supports pelvic organs and plays a crucial role during delivery. Prenatal pelvic floor training improves awareness and control. Kegel exercises strengthen these muscles when performed correctly. Relaxation techniques prepare for the pushing phase of labor. Perineal massage in late pregnancy may reduce tearing risk. Understanding pelvic floor function empowers women during pregnancy and postpartum recovery."
+        },
+        {
+          title: "Labor Preparation Techniques",
+          content: "Physical preparation for labor reduces complications and improves the birth experience. Optimal fetal positioning exercises encourage babies into favorable positions. Breathing techniques manage pain and anxiety during contractions. Labor positions and movements facilitate progression and reduce pain. Partner-assisted techniques involve support persons effectively. Practicing these skills during pregnancy builds confidence and competence for the actual event."
+        },
+        {
+          title: "Postpartum Recovery Planning",
+          content: "Planning for postpartum recovery begins during pregnancy. Understanding normal recovery timelines sets realistic expectations. Gentle exercise progression safely returns to pre-pregnancy fitness. Pelvic floor rehabilitation addresses any dysfunction. Core restoration exercises specifically target diastasis recti. Ergonomic considerations for infant care prevent repetitive strain. Early attention to these aspects promotes complete recovery and prevents long-term problems."
+        }
+      ],
+      conclusion: "Prenatal physiotherapy supports women through pregnancy, preparing them physically and mentally for labor and recovery. With appropriate guidance, pregnant women can remain active, manage discomfort, and optimize outcomes for themselves and their babies."
+    }
+  },
+  {
+    id: 7,
+    title: "Pediatric Physical Therapy: Early Intervention",
+    category: "pediatric",
+    readTime: "13 min",
+    author: "Dr. David Martinez",
+    date: "March 9, 2024",
+    excerpt: "Understanding developmental milestones and how early intervention can help children reach their full potential through targeted therapy.",
+    image: "/src/assets/articles/pediatric-therapy.jpg",
+    content: {
+      introduction: "Early intervention in pediatric physiotherapy can dramatically impact a child's development and long-term outcomes. Identifying developmental delays early and implementing appropriate interventions maximizes children's potential. Understanding normal development helps parents and professionals recognize when additional support is needed.",
+      sections: [
+        {
+          title: "Developmental Milestones",
+          content: "Normal motor development follows predictable patterns, though with individual variation. By 3 months, infants should lift their head during tummy time. Six-month milestones include rolling and sitting with support. At 9 months, crawling typically emerges. Walking independently usually occurs between 12-15 months. Two-year-olds can run and climb stairs. Significant delays beyond normal ranges warrant evaluation by a pediatric physiotherapist."
+        },
+        {
+          title: "Common Pediatric Conditions",
+          content: "Torticollis causes tilting and rotation limitations of the infant's head. Plagiocephaly, or flat head syndrome, often accompanies torticollis. Hypotonia, or low muscle tone, affects postural control and movement quality. Hypertonia causes increased muscle stiffness and resistance to movement. Cerebral palsy encompasses various movement disorders from brain injury. Genetic conditions like Down syndrome present specific motor challenges. Each condition requires specialized assessment and treatment approaches."
+        },
+        {
+          title: "Assessment and Evaluation",
+          content: "Comprehensive evaluation includes detailed developmental history from parents. Observation of spontaneous movement reveals quality and patterns. Standardized assessments quantify delays and track progress. Muscle tone, strength, and flexibility testing identifies impairments. Functional assessments determine how challenges affect daily activities. Parent-child interaction observation provides context for intervention planning. Ongoing reassessment monitors progress and guides treatment modifications."
+        },
+        {
+          title: "Treatment Approaches",
+          content: "Family-centered care ensures interventions fit into daily routines and family priorities. Play-based therapy keeps children engaged and motivated. Neurodevelopmental treatment facilitates normal movement patterns. Strengthening exercises build foundational motor skills. Environmental modifications support optimal development. Assistive devices and adaptive equipment enable participation when needed. Education empowers families to support development consistently."
+        },
+        {
+          title: "Family Education and Support",
+          content: "Parents are essential partners in pediatric therapy. Education about normal and delayed development sets realistic expectations. Home exercise programs ensure consistent practice between sessions. Activity suggestions integrate therapy into daily routines. Connecting families with community resources and support groups reduces isolation. Celebrating progress, however small, maintains motivation. Supporting the whole family promotes the child's best outcomes."
+        }
+      ],
+      conclusion: "Early intervention in pediatric physiotherapy capitalizes on neuroplasticity and critical developmental periods. With family partnership and evidence-based interventions, children with delays or disabilities can achieve their maximum potential."
+    }
+  },
+  {
+    id: 8,
+    title: "Aquatic Therapy: Healing in Water",
+    category: "innovative",
+    readTime: "11 min",
+    author: "Dr. Amanda Lee",
+    date: "March 8, 2024",
+    excerpt: "Discover how hydrotherapy provides a unique environment for rehabilitation, reducing pain while improving strength and mobility.",
+    image: "/src/assets/articles/hydrotherapy.jpg",
+    content: {
+      introduction: "Aquatic therapy utilizes water's unique properties to facilitate rehabilitation that may be difficult or impossible on land. The buoyancy, resistance, and warmth of water create an ideal environment for pain-free movement and progressive strengthening. Understanding these principles helps patients and therapists maximize benefits from aquatic interventions.",
+      sections: [
+        {
+          title: "Physical Properties of Water",
+          content: "Buoyancy reduces body weight by up to 90% when immersed to the neck, allowing movement with less joint stress. Hydrostatic pressure reduces swelling and improves circulation. Water resistance provides adjustable strengthening loads based on movement speed. Viscosity challenges balance and proprioception. Warmth relaxes muscles and reduces pain. These properties combine to create a therapeutic environment impossible to replicate on land."
+        },
+        {
+          title: "Conditions Benefiting from Aquatic Therapy",
+          content: "Arthritis patients experience pain-free range of motion and strengthening. Post-surgical patients begin movement earlier in water. Neurological conditions benefit from reduced gravity and sensory feedback. Sports injuries progress through rehabilitation phases safely. Chronic pain conditions respond to warm water immersion. Balance disorders improve with water's supportive environment. Almost any condition can benefit from aquatic therapy when appropriately prescribed."
+        },
+        {
+          title: "Aquatic Exercise Techniques",
+          content: "Walking and jogging in water build cardiovascular fitness with minimal impact. Resistance exercises using water's natural resistance or equipment strengthen muscles. Flexibility exercises utilize buoyancy to achieve greater range of motion. Balance activities challenge stability in a safe environment. Functional training mimics daily activities with less stress. Sport-specific movements prepare athletes for return to competition. Progression principles apply in water as they do on land."
+        },
+        {
+          title: "Safety Considerations",
+          content: "Medical clearance ensures water exercise is appropriate for each patient. Pool temperature typically ranges from 82-92°F depending on condition and activity. Supervision prevents accidents, especially for those with balance or neurological issues. Infection control through proper pool maintenance protects vulnerable individuals. Appropriate depth selection matches patient ability and therapeutic goals. Exit strategies ensure patients can safely leave the pool when fatigued."
+        },
+        {
+          title: "Transitioning to Land-Based Exercise",
+          content: "Aquatic therapy often serves as a bridge to land-based function. Progressive exercises in shallower water increase weight-bearing demands. Parallel land-based exercises ensure skill transfer. Gradual transition prevents setbacks from too-rapid progression. Some patients maintain aquatic exercise long-term for ongoing management. The goal is always maximizing function in the patient's actual living environment."
+        }
+      ],
+      conclusion: "Aquatic therapy provides unique benefits that accelerate rehabilitation and enable exercise that may not be possible on land. When integrated appropriately into comprehensive treatment plans, water-based interventions significantly improve patient outcomes."
+    }
+  },
+  {
+    id: 9,
+    title: "The Science of Workplace Ergonomics",
+    category: "workplace",
+    readTime: "9 min",
+    author: "Dr. Kevin Brown",
+    date: "March 7, 2024",
+    excerpt: "Evidence-based strategies for optimizing your workspace to prevent musculoskeletal disorders and improve productivity.",
+    image: "/src/assets/articles/ergonomic-assessment.jpg",
+    content: {
+      introduction: "Workplace musculoskeletal disorders cost billions annually in lost productivity and healthcare expenses. Proper ergonomics prevents these conditions while improving comfort and efficiency. Understanding ergonomic principles enables workers and employers to create healthier work environments.",
+      sections: [
+        {
+          title: "Common Workplace Injuries",
+          content: "Carpal tunnel syndrome from repetitive hand movements affects keyboard and mouse users. Lower back pain results from prolonged sitting or awkward postures. Neck strain comes from poor monitor positioning and sustained forward head posture. Shoulder problems develop from overhead reaching or unsupported arm positions. Eye strain and headaches result from improper lighting and screen distance. Each condition is preventable with proper ergonomic setup and work habits."
+        },
+        {
+          title: "Optimal Workstation Setup",
+          content: "Monitor height should place the top of the screen at or slightly below eye level. Viewing distance of 20-28 inches reduces eye strain. Keyboard and mouse positioning keeps wrists neutral and elbows at 90 degrees. Chair height allows feet flat on floor with thighs parallel to ground. Lumbar support maintains natural spine curves. Desk height enables relaxed shoulders with forearms parallel to floor. Lighting should be adjustable and minimize glare."
+        },
+        {
+          title: "Movement and Break Strategies",
+          content: "The 20-20-20 rule for eye strain: every 20 minutes, look at something 20 feet away for 20 seconds. Micro-breaks of 30 seconds every 10 minutes reduce muscle fatigue. Longer breaks of 5-10 minutes every hour allow full body movement. Standing intervals break up prolonged sitting. Movement snacks like shoulder rolls and neck stretches maintain mobility. Varying tasks provides natural breaks from repetitive activities. Regular movement is more important than perfect posture."
+        },
+        {
+          title: "Body Mechanics and Posture",
+          content: "Dynamic sitting with frequent position changes beats static 'perfect' posture. Core engagement supports the spine during sustained positions. Neutral spine positioning distributes loads evenly. Avoiding end-range positions prevents tissue stress. Proper lifting techniques protect the back during manual handling. Alternating between sitting and standing optimizes comfort and health. Movement and variety are key principles."
+        },
+        {
+          title: "Implementing Ergonomic Programs",
+          content: "Workstation assessments identify risk factors for each employee. Education about ergonomic principles enables self-management. Providing adjustable equipment accommodates individual needs. Creating a culture that supports movement breaks increases adherence. Regular reassessment ensures continued effectiveness. Tracking injury rates and productivity demonstrates program value. Successful programs require management support and employee engagement."
+        }
+      ],
+      conclusion: "Workplace ergonomics prevents injuries, reduces pain, and improves productivity. Implementing evidence-based principles creates healthier, more efficient work environments benefiting both employees and employers."
+    }
+  },
+  {
+    id: 10,
+    title: "Shoulder Rehabilitation After Rotator Cuff Repair",
+    category: "orthopedic",
+    readTime: "16 min",
+    author: "Dr. Rachel Stevens",
+    date: "March 6, 2024",
+    excerpt: "Comprehensive guide to recovering from rotator cuff surgery with phase-specific protocols and return to activity criteria.",
+    image: "/src/assets/articles/shoulder-rehab.jpg",
+    content: {
+      introduction: "Rotator cuff tears are among the most common shoulder injuries requiring surgery. Successful outcomes depend on appropriate surgical technique and, crucially, comprehensive rehabilitation. Understanding the healing process and following evidence-based protocols ensures optimal function and reduces re-tear risk.",
+      sections: [
+        {
+          title: "Understanding Rotator Cuff Anatomy and Injury",
+          content: "The rotator cuff consists of four muscles that stabilize and move the shoulder: supraspinatus, infraspinatus, teres minor, and subscapularis. These muscles work together to center the humeral head in the socket during movement. Tears occur from acute trauma, chronic degeneration, or a combination of both. Tear size, muscle quality, and patient factors influence healing potential and surgical approach. Repair techniques range from simple suture anchors to complex reconstructions."
+        },
+        {
+          title: "Phase 1: Protection (Weeks 0-6)",
+          content: "Immediate post-operative goals focus on protecting the repair while preventing stiffness. Immobilization in a sling maintains proper position and protects healing tissues. Passive range of motion by a therapist prevents adhesions without stressing the repair. Pendulum exercises provide gentle movement. Hand, wrist, and elbow exercises prevent stiffness in adjacent joints. Pain management through medications, ice, and positioning enables participation in therapy. Sleeping positions that protect the repair promote healing and comfort."
+        },
+        {
+          title: "Phase 2: Active Motion (Weeks 6-12)",
+          content: "Tissue healing at 6 weeks allows progression to active movement. Active-assisted range of motion exercises transition from passive to active control. Isometric strengthening begins with minimal load. Scapular stabilization exercises restore shoulder blade function. Gradual weaning from the sling occurs per surgeon protocol. Goals include achieving functional range of motion and initiating strengthening. Progression depends on individual healing, with larger tears advancing more slowly."
+        },
+        {
+          title: "Phase 3: Strengthening (Weeks 12-24)",
+          content: "Progressive resistance training rebuilds rotator cuff and surrounding muscle strength. Exercises progress from light resistance bands to weights. Emphasis on rotator cuff specific exercises ensures repair integrity. Scapular strengthening provides stable platform for arm movement. Functional exercises integrate shoulder use into daily activities. Range of motion should be full or nearly full. This phase requires patience as rotator cuff healing continues for up to one year."
+        },
+        {
+          title: "Phase 4: Return to Activity (Months 6-12)",
+          content: "Return to full activity requires meeting specific criteria, not just time milestones. Strength testing should show at least 80% of the opposite shoulder. Pain-free full range of motion enables functional activities. Quality movement patterns without compensation demonstrate neuromuscular control. Activity-specific training prepares for return to work or sport. Psychological readiness addresses fear of re-injury. Gradual return with monitoring prevents setbacks from excessive loads."
+        }
+      ],
+      conclusion: "Rotator cuff repair rehabilitation is a lengthy process requiring patience and adherence to progressive protocols. Working closely with qualified professionals and respecting tissue healing timelines optimizes outcomes and reduces re-tear risk."
+    }
   }
-  // Additional 25 articles would continue here following the same structure
-  // For brevity, I'll add them in the next file write
 ];
 
 export const getArticleById = (id: number): Article | undefined => {
