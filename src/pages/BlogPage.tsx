@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -30,6 +30,10 @@ const BlogPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
   const filteredArticles = allArticles.filter(article => {
     const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
                           article.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
@@ -45,7 +49,7 @@ const BlogPage = () => {
           <Button
             variant="ghost"
             onClick={() => navigate(-1)}
-            className="mb-6"
+            className="mb-6 mt-8 hover:bg-primary hover:text-primary-foreground transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Clock, User, Calendar, BookOpen } from "lucide-react";
 import { getArticlesByCategory } from "@/data/articlesData";
+import { useEffect } from "react";
 
 const categoryMetadata: Record<string, { title: string; description: string }> = {
   orthopedic: {
@@ -67,6 +68,10 @@ const CategoryPage = () => {
   const metadata = categoryMetadata[categoryId || "orthopedic"] || categoryMetadata.orthopedic;
   const articles = getArticlesByCategory(categoryId || "orthopedic");
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [categoryId]);
+
   return (
     <div className="min-h-screen pt-20 bg-background">
       <section className="py-12 bg-gradient-subtle">
@@ -74,7 +79,7 @@ const CategoryPage = () => {
           <Button
             variant="ghost"
             onClick={() => navigate(-1)}
-            className="mb-6"
+            className="mb-6 mt-8 hover:bg-primary hover:text-primary-foreground transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back

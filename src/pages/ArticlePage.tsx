@@ -1,4 +1,5 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -11,6 +12,10 @@ const ArticlePage = () => {
   const navigate = useNavigate();
   const article = getArticleById(Number(articleId));
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [articleId]);
+
   if (!article) {
     return <div className="min-h-screen pt-20 flex items-center justify-center">Article not found</div>;
   }
@@ -22,7 +27,7 @@ const ArticlePage = () => {
           <Button
             variant="ghost"
             onClick={() => navigate(-1)}
-            className="mb-6"
+            className="mb-6 mt-8 hover:bg-primary hover:text-primary-foreground transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Articles
@@ -69,6 +74,15 @@ const ArticlePage = () => {
               </div>
             </div>
 
+            <div className="relative h-96 mb-8 rounded-2xl overflow-hidden">
+              <img 
+                src={article.image} 
+                alt={article.title}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+            </div>
+
             <Card className="glass border-primary/20 mb-8">
               <CardContent className="p-8">
                 <div className="prose prose-lg max-w-none">
@@ -95,7 +109,7 @@ const ArticlePage = () => {
             </Card>
 
             <div className="flex gap-4">
-              <Link to="/knowledge/orthopedic" className="flex-1">
+              <Link to={`/knowledge/${article.category}`} className="flex-1">
                 <Button variant="outline" className="w-full">
                   More Articles in This Category
                 </Button>
