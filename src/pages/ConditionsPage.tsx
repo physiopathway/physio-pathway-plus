@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -119,6 +119,10 @@ const ConditionsPage = () => {
   const navigate = useNavigate();
   const [activeCategory, setActiveCategory] = useState("All");
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -161,7 +165,7 @@ const ConditionsPage = () => {
   return (
     <div className="min-h-screen pt-16 bg-gradient-to-br from-background via-muted/30 to-background">
       <div className="container mx-auto px-4 pt-8">
-        <Button variant="ghost" onClick={() => navigate(-1)} className="mb-4">
+        <Button variant="ghost" onClick={() => navigate(-1)} className="mb-6 mt-8 hover:bg-primary hover:text-primary-foreground transition-colors">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back
         </Button>

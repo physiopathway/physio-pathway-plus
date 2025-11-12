@@ -59,6 +59,30 @@ const categoryMetadata: Record<string, { title: string; description: string }> =
   innovative: {
     title: "Innovative Technologies",
     description: "Latest tech in physiotherapy"
+  },
+  "womens-health": {
+    title: "Women's Health Physiotherapy",
+    description: "Specialized care for women's health issues"
+  },
+  integumentary: {
+    title: "Integumentary Rehabilitation",
+    description: "Wound care and skin health management"
+  },
+  industrial: {
+    title: "Industrial Rehabilitation",
+    description: "Workplace injury prevention and recovery"
+  },
+  oncology: {
+    title: "Oncology Rehabilitation",
+    description: "Cancer rehabilitation and recovery support"
+  },
+  vestibular: {
+    title: "Vestibular Rehabilitation",
+    description: "Balance and dizziness treatment"
+  },
+  community: {
+    title: "Community Physiotherapy",
+    description: "Community-based rehabilitation services"
   }
 };
 

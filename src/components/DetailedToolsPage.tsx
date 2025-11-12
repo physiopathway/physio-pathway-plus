@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
@@ -25,6 +25,10 @@ const DetailedToolsPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedDifficulty, setSelectedDifficulty] = useState("all");
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
 
   const toolCategories = [
     { id: "all", name: "All Tools", count: 24 },
@@ -185,7 +189,7 @@ const DetailedToolsPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 pt-8">
-        <Button variant="ghost" onClick={() => navigate(-1)} className="mb-4">
+        <Button variant="ghost" onClick={() => navigate(-1)} className="mb-6 mt-8 hover:bg-primary hover:text-primary-foreground transition-colors">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back
         </Button>
