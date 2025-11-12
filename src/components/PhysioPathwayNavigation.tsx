@@ -38,6 +38,25 @@ const PhysioPathwayNavigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const location = useLocation();
+  const isHomePage = location.pathname === "/" || location.pathname === "/new-home";
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+      setActiveDropdown(null);
+      setIsMenuOpen(false);
+    }
+  };
+
+  const handleNavClick = (e: React.MouseEvent, sectionId: string, fallbackUrl: string) => {
+    if (isHomePage) {
+      e.preventDefault();
+      scrollToSection(sectionId);
+    } else {
+      // Will navigate to fallbackUrl normally via Link
+    }
+  };
 
   return (
     <header className="bg-background border-b border-border sticky top-0 z-50 shadow-sm">
@@ -69,10 +88,23 @@ const PhysioPathwayNavigation = () => {
               onMouseEnter={() => setActiveDropdown("knowledge")}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="flex items-center px-4 py-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors rounded-md">
-                Knowledge Hub
-                <ChevronDown className="ml-1 h-4 w-4" />
-              </button>
+              {isHomePage ? (
+                <button 
+                  onClick={() => scrollToSection("knowledge-hub")}
+                  className="flex items-center px-4 py-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors rounded-md"
+                >
+                  Knowledge Hub
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </button>
+              ) : (
+                <Link 
+                  to="/knowledge"
+                  className="flex items-center px-4 py-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors rounded-md"
+                >
+                  Knowledge Hub
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </Link>
+              )}
               {activeDropdown === "knowledge" && (
                 <div className="absolute left-0 top-full mt-2 w-[800px] bg-background border border-border rounded-lg shadow-xl p-6 z-50">
                   <div className="grid grid-cols-3 gap-4">
@@ -102,10 +134,23 @@ const PhysioPathwayNavigation = () => {
               onMouseEnter={() => setActiveDropdown("pain")}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="flex items-center px-4 py-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors rounded-md">
-                Pain Management
-                <ChevronDown className="ml-1 h-4 w-4" />
-              </button>
+              {isHomePage ? (
+                <button 
+                  onClick={() => scrollToSection("pain-management")}
+                  className="flex items-center px-4 py-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors rounded-md"
+                >
+                  Pain Management
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </button>
+              ) : (
+                <Link 
+                  to="/conditions"
+                  className="flex items-center px-4 py-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors rounded-md"
+                >
+                  Pain Management
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </Link>
+              )}
               {activeDropdown === "pain" && (
                 <div className="absolute left-0 top-full mt-2 w-64 bg-background border border-border rounded-lg shadow-xl p-3 z-50">
                   {painManagementItems.map((item) => (
@@ -130,10 +175,23 @@ const PhysioPathwayNavigation = () => {
               onMouseEnter={() => setActiveDropdown("tools")}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="flex items-center px-4 py-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors rounded-md">
-                Clinical Tools
-                <ChevronDown className="ml-1 h-4 w-4" />
-              </button>
+              {isHomePage ? (
+                <button 
+                  onClick={() => scrollToSection("clinical-tools")}
+                  className="flex items-center px-4 py-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors rounded-md"
+                >
+                  Clinical Tools
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </button>
+              ) : (
+                <Link 
+                  to="/tools"
+                  className="flex items-center px-4 py-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors rounded-md"
+                >
+                  Clinical Tools
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </Link>
+              )}
               {activeDropdown === "tools" && (
                 <div className="absolute left-0 top-full mt-2 w-72 bg-background border border-border rounded-lg shadow-xl p-3 z-50">
                   {rehabTools.map((tool) => (
@@ -156,14 +214,23 @@ const PhysioPathwayNavigation = () => {
             </div>
 
             {/* Academy */}
-            <Link
-              to="/academy"
-              className={`px-4 py-2 text-sm font-medium transition-colors hover:text-primary rounded-md ${
-                location.pathname === "/academy" ? "text-primary bg-primary/10" : "text-muted-foreground"
-              }`}
-            >
-              Academy
-            </Link>
+            {isHomePage ? (
+              <button
+                onClick={() => scrollToSection("academy")}
+                className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors rounded-md"
+              >
+                Academy
+              </button>
+            ) : (
+              <Link
+                to="/academy"
+                className={`px-4 py-2 text-sm font-medium transition-colors hover:text-primary rounded-md ${
+                  location.pathname === "/academy" ? "text-primary bg-primary/10" : "text-muted-foreground"
+                }`}
+              >
+                Academy
+              </Link>
+            )}
 
             {/* About */}
             <Link
@@ -205,44 +272,60 @@ const PhysioPathwayNavigation = () => {
               </Link>
               
               <div>
-                <h3 className="text-xs font-semibold text-muted-foreground uppercase mb-2">Knowledge Hub</h3>
-                <div className="pl-4 space-y-2">
-                  {knowledgeHubCategories.slice(0, 5).map((category) => (
-                    <Link
-                      key={category.name}
-                      to={category.href}
-                      className="block text-sm text-foreground hover:text-primary transition-colors"
-                    >
-                      {category.name}
-                    </Link>
-                  ))}
-                  <Link to="/knowledge" className="block text-sm text-primary font-medium">
-                    View All →
+                {isHomePage ? (
+                  <button 
+                    onClick={() => scrollToSection("knowledge-hub")}
+                    className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                  >
+                    Knowledge Hub
+                  </button>
+                ) : (
+                  <Link to="/knowledge" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+                    Knowledge Hub
                   </Link>
-                </div>
+                )}
               </div>
 
               <div>
-                <h3 className="text-xs font-semibold text-muted-foreground uppercase mb-2">Pain Management</h3>
-                <div className="pl-4 space-y-2">
-                  {painManagementItems.map((item) => (
-                    <Link
-                      key={item.name}
-                      to={item.href}
-                      className="block text-sm text-foreground hover:text-primary transition-colors"
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
+                {isHomePage ? (
+                  <button 
+                    onClick={() => scrollToSection("pain-management")}
+                    className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                  >
+                    Pain Management
+                  </button>
+                ) : (
+                  <Link to="/conditions" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+                    Pain Management
+                  </Link>
+                )}
               </div>
 
-              <Link to="/tools" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-                Clinical Tools
-              </Link>
-              <Link to="/academy" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
-                Academy
-              </Link>
+              {isHomePage ? (
+                <button 
+                  onClick={() => scrollToSection("clinical-tools")}
+                  className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                >
+                  Clinical Tools
+                </button>
+              ) : (
+                <Link to="/tools" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+                  Clinical Tools
+                </Link>
+              )}
+              
+              {isHomePage ? (
+                <button 
+                  onClick={() => scrollToSection("academy")}
+                  className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                >
+                  Academy
+                </button>
+              ) : (
+                <Link to="/academy" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+                  Academy
+                </Link>
+              )}
               <Link to="/about" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
                 About
               </Link>

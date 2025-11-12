@@ -172,7 +172,7 @@ const PhysioPathwayHomepage = () => {
       </section>
 
       {/* Knowledge Hub Preview */}
-      <section className="py-20 bg-muted/30">
+      <section id="knowledge-hub" className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4 text-foreground">Knowledge Hub</h2>
@@ -204,7 +204,7 @@ const PhysioPathwayHomepage = () => {
       </section>
 
       {/* Pain Management Preview */}
-      <section className="py-20 bg-background">
+      <section id="pain-management" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4 text-foreground">Pain Management & Exercise Programs</h2>
@@ -249,7 +249,7 @@ const PhysioPathwayHomepage = () => {
       </section>
 
       {/* Clinical Tools Preview */}
-      <section className="py-20 bg-muted/30">
+      <section id="clinical-tools" className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4 text-foreground">Clinical Tools & Calculators</h2>
@@ -283,7 +283,7 @@ const PhysioPathwayHomepage = () => {
       </section>
 
       {/* Academy Preview */}
-      <section className="py-20 bg-background">
+      <section id="academy" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4 text-foreground">PhysioPathway Academy</h2>
@@ -333,7 +333,7 @@ const PhysioPathwayHomepage = () => {
       </section>
 
       {/* Latest Articles */}
-      <section className="py-20 bg-muted/30">
+      <section id="articles" className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4 text-foreground">Latest From Our Knowledge Hub</h2>
