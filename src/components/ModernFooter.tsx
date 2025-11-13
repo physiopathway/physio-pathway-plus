@@ -30,10 +30,10 @@ const ModernFooter = () => {
       { name: "FAQ", href: "/faq" },
     ],
     "Legal": [
-      { name: "Privacy Policy", href: "/privacy" },
-      { name: "Terms of Service", href: "/terms" },
-      { name: "Cookie Policy", href: "/cookies" },
+      { name: "Privacy Policy", href: "/privacy-policy" },
+      { name: "Terms of Service", href: "/terms-of-service" },
       { name: "Disclaimer", href: "/disclaimer" },
+      { name: "Accessibility", href: "/accessibility" },
     ]
   };
 
