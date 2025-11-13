@@ -18,7 +18,7 @@ const ContactPage = () => {
   });
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'auto' });
   }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -43,7 +43,7 @@ const ContactPage = () => {
         <Button 
           variant="ghost" 
           onClick={() => navigate(-1)} 
-          className="mb-6 mt-8 hover:bg-primary hover:text-primary-foreground transition-colors"
+          className="mt-2 mb-4 hover:bg-primary hover:text-primary-foreground transition-colors"
         >
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back

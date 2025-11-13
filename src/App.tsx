@@ -15,6 +15,7 @@ import ContactPage from "./pages/ContactPage";
 import AccessibilityPage from "./pages/AccessibilityPage";
 import AcademyPage from "./pages/AcademyPage";
 import CookieConsent from "./components/CookieConsent";
+import ScrollToTop from "./components/ScrollToTop";
 import AboutPage from "./pages/AboutPage";
 import BMICalculator from "./pages/tools/BMICalculator";
 import ROMCalculator from "./pages/tools/ROMCalculator";
@@ -39,6 +40,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <CookieConsent />
         <Layout>
           <Routes>

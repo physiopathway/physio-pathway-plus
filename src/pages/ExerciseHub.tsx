@@ -173,7 +173,7 @@ const ExerciseHub = () => {
   return (
     <div className="min-h-screen pt-16 bg-gradient-to-br from-background via-muted/30 to-background">
       <div className="container mx-auto px-4 pt-8">
-        <Button variant="ghost" onClick={() => navigate(-1)} className="mb-4">
+        <Button variant="ghost" onClick={() => navigate(-1)} className="mt-2 mb-4 hover:bg-primary hover:text-primary-foreground transition-colors">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back
         </Button>
