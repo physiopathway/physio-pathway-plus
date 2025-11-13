@@ -38,8 +38,8 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <CookieConsent />
       <BrowserRouter>
+        <CookieConsent />
         <Layout>
           <Routes>
             <Route path="/" element={<NewHomePage />} />
