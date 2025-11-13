@@ -1,11 +1,31 @@
+import { useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+
 const PrivacyPolicy = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
   return (
     <div className="min-h-screen bg-background py-16">
-      <div className="container max-w-4xl mx-auto">
+      <div className="container max-w-4xl mx-auto px-4">
+        <Button 
+          variant="ghost" 
+          onClick={() => navigate(-1)} 
+          className="mb-6 mt-8 hover:bg-primary hover:text-primary-foreground transition-colors"
+        >
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          Back
+        </Button>
+
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold mb-4">Privacy Policy</h1>
           <p className="text-muted-foreground">
-            Last updated: December 2024
+            Last updated: January 2025
           </p>
         </div>
 

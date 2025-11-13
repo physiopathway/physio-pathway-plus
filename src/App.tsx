@@ -10,7 +10,11 @@ import ExerciseHub from "./pages/ExerciseHub";
 import ToolsPage from "./pages/ToolsPage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Disclaimer from "./pages/Disclaimer";
+import TermsOfService from "./pages/TermsOfService";
+import ContactPage from "./pages/ContactPage";
+import AccessibilityPage from "./pages/AccessibilityPage";
 import AcademyPage from "./pages/AcademyPage";
+import CookieConsent from "./components/CookieConsent";
 import AboutPage from "./pages/AboutPage";
 import BMICalculator from "./pages/tools/BMICalculator";
 import ROMCalculator from "./pages/tools/ROMCalculator";
@@ -34,6 +38,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      <CookieConsent />
       <BrowserRouter>
         <Layout>
           <Routes>
@@ -59,7 +64,12 @@ const App = () => (
             <Route path="/academy/:universityId" element={<AcademyPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<TermsOfService />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/disclaimer" element={<Disclaimer />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/accessibility" element={<AccessibilityPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

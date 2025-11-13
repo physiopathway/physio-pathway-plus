@@ -1,7 +1,16 @@
-import { AlertTriangle, Shield, Heart, BookOpen } from "lucide-react";
+import { AlertTriangle, Shield, Heart, BookOpen, ArrowLeft } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const Disclaimer = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
   const importantPoints = [
     {
       icon: AlertTriangle,
@@ -27,7 +36,16 @@ const Disclaimer = () => {
 
   return (
     <div className="min-h-screen bg-background py-16">
-      <div className="container max-w-4xl mx-auto">
+      <div className="container max-w-4xl mx-auto px-4">
+        <Button 
+          variant="ghost" 
+          onClick={() => navigate(-1)} 
+          className="mb-6 mt-8 hover:bg-primary hover:text-primary-foreground transition-colors"
+        >
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          Back
+        </Button>
+
         <div className="text-center mb-12">
           <div className="w-20 h-20 bg-warning/20 rounded-2xl mx-auto mb-6 flex items-center justify-center">
             <AlertTriangle className="h-10 w-10 text-warning" />
