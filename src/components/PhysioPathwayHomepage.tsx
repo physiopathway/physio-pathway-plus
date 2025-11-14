@@ -373,7 +373,7 @@ const PhysioPathwayHomepage = () => {
           </div>
           
           <div className="text-center mt-12">
-            <Link to="/academy">
+            <Link to="/blog">
               <Button size="lg" variant="outline" className="hover:shadow-glow">
                 Read All Articles <ArrowRight className="ml-2 h-5 w-5" />
               </Button>

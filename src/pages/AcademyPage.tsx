@@ -4,64 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import universityImage from "@/assets/university-physio.jpg";
-
-const universities = [
-  {
-    name: "University of Melbourne",
-    location: "Melbourne, Australia",
-    program: "Doctor of Physiotherapy",
-    duration: "4 years",
-    students: "250+ students",
-    ranking: "#1 in Australia",
-    image: universityImage
-  },
-  {
-    name: "McGill University",
-    location: "Montreal, Canada",
-    program: "Master of Physical Therapy",
-    duration: "2 years",
-    students: "180+ students",
-    ranking: "Top 50 Global",
-    image: universityImage
-  },
-  {
-    name: "King's College London",
-    location: "London, UK",
-    program: "BSc Physiotherapy",
-    duration: "3 years",
-    students: "200+ students",
-    ranking: "Top 10 UK",
-    image: universityImage
-  },
-  {
-    name: "University of Toronto",
-    location: "Toronto, Canada",
-    program: "Master of Science in Physical Therapy",
-    duration: "2 years",
-    students: "160+ students",
-    ranking: "Top 20 Global",
-    image: universityImage
-  },
-  {
-    name: "University of Sydney",
-    location: "Sydney, Australia",
-    program: "Bachelor of Physiotherapy",
-    duration: "4 years",
-    students: "220+ students",
-    ranking: "#2 in Australia",
-    image: universityImage
-  },
-  {
-    name: "Duke University",
-    location: "Durham, USA",
-    program: "Doctor of Physical Therapy",
-    duration: "3 years",
-    students: "150+ students",
-    ranking: "Top 5 USA",
-    image: universityImage
-  },
-];
+import { universities } from "@/data/universitiesData";
 
 const careerPaths = [
   { title: "Clinical Physiotherapist", icon: Users, opportunities: "5,200+ jobs" },
@@ -139,7 +82,7 @@ const AcademyPage = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {universities.map((uni, index) => (
-              <Link to={`/academy/${uni.name.toLowerCase().replace(/\s+/g, '-')}`} key={index}>
+              <Link to={`/academy/${uni.id}`} key={uni.id}>
                 <Card 
                   className="overflow-hidden hover:shadow-elegant transition-all duration-300 hover:-translate-y-2 group animate-fade-in cursor-pointer"
                   style={{ animationDelay: `${index * 100}ms` }}
@@ -159,7 +102,7 @@ const AcademyPage = () => {
                     <div className="space-y-2 mb-4">
                       <div className="flex items-center text-sm text-muted-foreground">
                         <MapPin className="w-4 h-4 mr-2" />
-                        {uni.location}
+                        {uni.location}, {uni.country}
                       </div>
                       <div className="flex items-center text-sm text-muted-foreground">
                         <BookOpen className="w-4 h-4 mr-2" />
