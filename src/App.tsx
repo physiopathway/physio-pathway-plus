@@ -14,6 +14,7 @@ import TermsOfService from "./pages/TermsOfService";
 import ContactPage from "./pages/ContactPage";
 import AccessibilityPage from "./pages/AccessibilityPage";
 import AcademyPage from "./pages/AcademyPage";
+import UniversityDetailPage from "./pages/UniversityDetailPage";
 import CookieConsent from "./components/CookieConsent";
 import ScrollToTop from "./components/ScrollToTop";
 import AboutPage from "./pages/AboutPage";
@@ -63,7 +64,7 @@ const App = () => (
             <Route path="/article/:articleId" element={<ArticlePage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/academy" element={<AcademyPage />} />
-            <Route path="/academy/:universityId" element={<AcademyPage />} />
+            <Route path="/academy/:universityId" element={<UniversityDetailPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
